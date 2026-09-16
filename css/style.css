@@ -224,3 +224,69 @@ form button:hover {
     color: #1e3a8a;
     margin-top: 0;
 }
+
+/* General Layout Improvements */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Sidebar Improvements */
+
+.sidebar {
+    min-height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.sidebar nav a {
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+/* Header Improvements */
+
+.header h1 {
+    font-size: 32px;
+    color: #1e3a8a;
+}
+
+.header p {
+    color: #64748b;
+}
+
+/* Card Improvements */
+
+.card {
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+/* Schedule Improvements */
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-item h3 {
+    color: #1e293b;
+}
+
+.schedule-item p {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
