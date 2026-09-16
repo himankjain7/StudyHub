@@ -199,3 +199,28 @@ form button:hover {
     font-size: 14px;
     border-top: 1px solid #e2e8f0;
 }
+
+/* Card Hover Effect */
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.15);
+}
+
+/* Better Section Headings */
+
+.schedule h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+/* Better Welcome Heading */
+
+.welcome h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+}
