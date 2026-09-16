@@ -1,31 +1,47 @@
+/* ==============================
+   Basic Page Styling
+============================== */
 
-/* Basic Page Styling */
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f8fafc;
     color: #1e293b;
+    line-height: 1.6;
 }
 
-/* Dashboard Layout */
+/* ==============================
+   Main Dashboard Layout
+============================== */
 
 .dashboard {
     display: flex;
     min-height: 100vh;
+    width: 100%;
 }
 
-/* Sidebar */
+/* ==============================
+   Sidebar
+============================== */
 
 .sidebar {
     width: 220px;
+    min-width: 220px;
+    min-height: 100vh;
     background-color: #1e3a8a;
     color: white;
     padding: 25px;
 }
 
 .sidebar h2 {
+    margin-top: 0;
     margin-bottom: 35px;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
 .sidebar nav a {
@@ -34,26 +50,56 @@ body {
     text-decoration: none;
     padding: 12px;
     margin-bottom: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
 }
 
-/* Main Content */
+.sidebar nav a:hover {
+    background-color: #3b82f6;
+}
+
+/* ==============================
+   Main Content
+============================== */
 
 .main-content {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    width: 100%;
+    min-width: 0;
     padding: 30px;
 }
 
-/* Header */
+/* Keep all main sections vertically arranged */
+
+.main-content > * {
+    width: 100%;
+}
+
+/* ==============================
+   Header
+============================== */
 
 .header {
     margin-bottom: 25px;
 }
 
 .header h1 {
+    margin-top: 0;
     margin-bottom: 8px;
+    font-size: 32px;
+    color: #1e3a8a;
 }
 
-/* Welcome Section */
+.header p {
+    margin: 0;
+    color: #64748b;
+}
+
+/* ==============================
+   Welcome Section
+============================== */
 
 .welcome {
     background-color: #dbeafe;
@@ -62,11 +108,23 @@ body {
     margin-bottom: 25px;
 }
 
-/* Statistics Cards */
+.welcome h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #1e3a8a;
+}
+
+.welcome p {
+    margin-bottom: 0;
+}
+
+/* ==============================
+   Statistics Cards
+============================== */
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -74,28 +132,45 @@ body {
 .card {
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
     border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.15);
 }
 
 .card h3 {
+    margin-top: 0;
     font-size: 16px;
     color: #64748b;
 }
 
 .card p {
+    margin-bottom: 0;
     font-size: 28px;
     font-weight: bold;
     color: #1e3a8a;
 }
 
-/* Schedule */
+/* ==============================
+   Schedule Section
+============================== */
 
 .schedule {
     background-color: white;
     padding: 25px;
-    border-radius: 10px;
     border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.schedule h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1e3a8a;
 }
 
 .schedule-item {
@@ -103,60 +178,28 @@ body {
     border-bottom: 1px solid #e2e8f0;
 }
 
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
 .schedule-item h3 {
+    margin-top: 0;
     margin-bottom: 5px;
+    color: #1e293b;
 }
 
 .schedule-item p {
+    margin-top: 0;
+    margin-bottom: 0;
     color: #64748b;
 }
 
-
-/* Sidebar Hover Effect */
-
-.sidebar nav a:hover {
-    background-color: #3b82f6;
-    border-radius: 5px;
-}
-
-
-/* Responsive Design */
-
-@media (max-width: 768px) {
-
-    .dashboard {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: auto;
-        padding: 15px;
-    }
-
-    .sidebar h2 {
-        margin-bottom: 15px;
-    }
-
-    .sidebar nav a {
-        display: inline-block;
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
-
-    .main-content {
-        padding: 20px;
-    }
-
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-/* Contact Form */
+/* ==============================
+   Contact Form
+============================== */
 
 form label {
-    display: inline-block;
+    display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -169,7 +212,6 @@ form textarea {
     border: 1px solid #cbd5e1;
     border-radius: 5px;
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
 }
 
 form textarea {
@@ -189,7 +231,9 @@ form button:hover {
     background-color: #3b82f6;
 }
 
-/* Footer */
+/* ==============================
+   Footer
+============================== */
 
 .footer {
     text-align: center;
@@ -200,93 +244,85 @@ form button:hover {
     border-top: 1px solid #e2e8f0;
 }
 
-/* Card Hover Effect */
+/* ==============================
+   Responsive Design
+============================== */
 
-.card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+@media (max-width: 1000px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.15);
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav a {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+/* Final Dashboard Layout Fix */
+
+.dashboard {
+    display: flex;
+    align-items: stretch;
 }
 
-/* Better Section Headings */
-
-.schedule h2 {
-    color: #1e3a8a;
-    margin-bottom: 20px;
+.main-content {
+    display: block !important;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
 }
 
-/* Better Welcome Heading */
+/* Arrange dashboard sections vertically */
 
-.welcome h2 {
-    color: #1e3a8a;
-    margin-top: 0;
+.main-content > .header,
+.main-content > .welcome,
+.main-content > .stats,
+.main-content > .schedule,
+.main-content > .footer {
+    display: block;
+    width: 100%;
+    clear: both;
 }
 
-/* General Layout Improvements */
+/* Statistics remain in a grid */
 
-* {
-    box-sizing: border-box;
+.main-content > .stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
-body {
-    line-height: 1.6;
-}
+/* Prevent content from overflowing */
 
-/* Sidebar Improvements */
-
-.sidebar {
-    min-height: 100vh;
-}
-
-.sidebar h2 {
-    font-size: 24px;
-    letter-spacing: 1px;
-}
-
-.sidebar nav a {
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-}
-
-/* Header Improvements */
-
-.header h1 {
-    font-size: 32px;
-    color: #1e3a8a;
-}
-
-.header p {
-    color: #64748b;
-}
-
-/* Card Improvements */
-
-.card {
-    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
-}
-
-.card h3 {
-    margin-top: 0;
-}
-
-.card p {
-    margin-bottom: 0;
-}
-
-/* Schedule Improvements */
-
-.schedule-item:last-child {
-    border-bottom: none;
-}
-
-.schedule-item h3 {
-    color: #1e293b;
-}
-
-.schedule-item p {
-    margin-top: 5px;
-    margin-bottom: 0;
+.header,
+.welcome,
+.stats,
+.schedule {
+    max-width: 100%;
 }
