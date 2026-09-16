@@ -326,3 +326,77 @@ form button:hover {
 .schedule {
     max-width: 100%;
 }
+/* Study Planner */
+
+.planner-section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.planner-section h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.planner-card {
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #f8fafc;
+}
+
+.planner-card h3 {
+    color: #1e3a8a;
+    margin-top: 0;
+}
+
+.planner-card p {
+    color: #64748b;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.planned {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+}
+
+.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.goal-list {
+    padding-left: 20px;
+}
+
+.goal-list li {
+    margin-bottom: 12px;
+    color: #475569;
+}
+
+/* Responsive Planner Layout */
+
+@media (max-width: 1000px) {
+
+    .planner-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
