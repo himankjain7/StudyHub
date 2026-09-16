@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Planner - Student Productivity Hub</title>
+
+    <title>Study Planner | StudyHub</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,9 +19,9 @@
 
             <h2>StudyHub</h2>
 
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="index.html">Dashboard</a>
-                <a href="planner.html">Study Planner</a>
+                <a href="planner.html" aria-current="page">Study Planner</a>
                 <a href="resources.html">Resources</a>
                 <a href="tips.html">Study Tips</a>
                 <a href="goals.html">Goals</a>
@@ -29,53 +31,76 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
 
+            <!-- Page Header -->
             <header class="header">
                 <h1>Study Planner</h1>
-                <p>Plan your study sessions effectively.</p>
+                <p>Plan your study sessions and manage your time effectively.</p>
             </header>
 
             <!-- Planner Introduction -->
-            <section class="welcome">
-                <h2>Organize Your Study Time</h2>
-                <p>Create a simple plan and stay consistent with your studies.</p>
-            </section>
+            <section class="welcome" aria-labelledby="planner-heading">
 
-            <!-- Study Plan -->
-            <section class="schedule">
+                <h2 id="planner-heading">Plan your day</h2>
 
-                <h2>Today's Study Plan</h2>
-
-                <div class="schedule-item">
-                    <h3>Digital Logic Design</h3>
-                    <p>9:00 AM - 10:00 AM</p>
-                    <p>Revise Boolean algebra and logic gates.</p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>Web Programming</h3>
-                    <p>11:00 AM - 12:00 PM</p>
-                    <p>Practice HTML structure and CSS styling.</p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>Data Structures</h3>
-                    <p>2:00 PM - 3:00 PM</p>
-                    <p>Study stack and queue operations.</p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>Revision</h3>
-                    <p>4:00 PM - 5:00 PM</p>
-                    <p>Revise the topics studied during the day.</p>
-                </div>
+                <p>
+                    Use this study planner to organize your subjects,
+                    revision sessions, and daily academic tasks.
+                </p>
 
             </section>
+
+            <!-- Study Schedule -->
+            <section class="planner-section" aria-labelledby="schedule-heading">
+
+                <h2 id="schedule-heading">Today's Study Plan</h2>
+
+                <div class="planner-grid">
+
+                    <article class="planner-card">
+                        <h3>Digital Logic Design</h3>
+                        <p><strong>Time:</strong> 9:00 AM - 10:00 AM</p>
+                        <p><strong>Task:</strong> Revise Boolean algebra</p>
+                        <span class="status planned">Planned</span>
+                    </article>
+
+                    <article class="planner-card">
+                        <h3>Web Programming</h3>
+                        <p><strong>Time:</strong> 11:00 AM - 12:00 PM</p>
+                        <p><strong>Task:</strong> Practice HTML and CSS</p>
+                        <span class="status planned">Planned</span>
+                    </article>
+
+                    <article class="planner-card">
+                        <h3>Revision</h3>
+                        <p><strong>Time:</strong> 4:00 PM - 5:00 PM</p>
+                        <p><strong>Task:</strong> Revise today's topics</p>
+                        <span class="status pending">Pending</span>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- Weekly Goals -->
+            <section class="planner-section" aria-labelledby="weekly-heading">
+
+                <h2 id="weekly-heading">Weekly Study Goals</h2>
+
+                <ul class="goal-list">
+                    <li>Complete two chapters of Digital Logic Design.</li>
+                    <li>Practice HTML and CSS for one hour daily.</li>
+                    <li>Revise important topics before the weekend.</li>
+                    <li>Complete all planned study sessions.</li>
+                </ul>
+
+            </section>
+
             <!-- Footer -->
-<footer class="footer">
-    <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
-</footer>
+            <footer class="footer">
+                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+            </footer>
 
         </main>
 
