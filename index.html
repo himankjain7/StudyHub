@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Productivity Hub</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,33 +19,46 @@
 
             <h2>StudyHub</h2>
 
-            <nav>
-                <a href="index.html">Dashboard</a>
+            <nav aria-label="Main navigation">
+
+                <a href="index.html" aria-current="page">Dashboard</a>
                 <a href="planner.html">Study Planner</a>
                 <a href="resources.html">Resources</a>
                 <a href="tips.html">Study Tips</a>
                 <a href="goals.html">Goals</a>
                 <a href="contact.html">Contact</a>
+
             </nav>
 
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
 
+            <!-- Header -->
             <header class="header">
+
                 <h1>Dashboard</h1>
                 <p>Welcome back, Student!</p>
+
             </header>
 
             <!-- Welcome Section -->
-            <section class="welcome">
-                <h2>Let's make today productive!</h2>
-                <p>Organize your studies and achieve your goals.</p>
+            <section class="welcome" aria-labelledby="welcome-heading">
+
+                <h2 id="welcome-heading">
+                    Let's make today productive!
+                </h2>
+
+                <p>
+                    Organize your studies, manage your time,
+                    and achieve your academic goals.
+                </p>
+
             </section>
 
             <!-- Statistics Cards -->
-            <section class="stats">
+            <section class="stats" aria-label="Study statistics">
 
                 <div class="card">
                     <h3>Total Subjects</h3>
@@ -68,9 +83,9 @@
             </section>
 
             <!-- Today's Schedule -->
-            <section class="schedule">
+            <section class="schedule" aria-labelledby="schedule-heading">
 
-                <h2>Today's Schedule</h2>
+                <h2 id="schedule-heading">Today's Schedule</h2>
 
                 <div class="schedule-item">
                     <h3>Digital Logic Design</h3>
@@ -91,7 +106,12 @@
 
             <!-- Footer -->
             <footer class="footer">
-                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+
+                <p>
+                    © 2026 Student Productivity Hub |
+                    Plan smarter. Study better.
+                </p>
+
             </footer>
 
         </main>
