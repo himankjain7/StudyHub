@@ -400,3 +400,85 @@ form button:hover {
     }
 
 }
+/* ==============================
+   Active Navigation Link
+============================== */
+
+.sidebar nav a[aria-current="page"] {
+    background-color: #3b82f6;
+    font-weight: bold;
+}
+
+/* ==============================
+   Navigation Hover Effect
+============================== */
+
+.sidebar nav a:hover {
+    background-color: #3b82f6;
+    transform: translateX(3px);
+}
+
+/* ==============================
+   Navigation Transition
+============================== */
+
+.sidebar nav a {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* ==============================
+   Quick Actions
+============================== */
+
+.quick-actions {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.quick-actions h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.action-card {
+    display: block;
+    padding: 20px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-card h3 {
+    margin-top: 0;
+    color: #1e3a8a;
+}
+
+.action-card p {
+    margin-bottom: 0;
+    color: #64748b;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(30, 58, 138, 0.12);
+}
+
+/* Responsive Quick Actions */
+
+@media (max-width: 768px) {
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+}
