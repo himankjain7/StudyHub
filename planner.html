@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Planner | StudyHub - Student Productivity Portal</title>
+    <title>Study Planner | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,220 +12,154 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar Navigation -->
+        <!-- 1. Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <div class="brand-icon">🎓</div>
-                <div class="brand-text">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
                     <h2>StudyHub</h2>
-                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                    <small>STUDENT PORTAL</small>
                 </div>
             </div>
 
-            <nav class="sidebar-nav" aria-label="Main navigation">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-icon">📊</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="planner.html" class="nav-link active" aria-current="page">
-                    <span class="nav-icon">📅</span>
-                    <span>Study Planner</span>
-                </a>
-                <a href="resources.html" class="nav-link">
-                    <span class="nav-icon">📚</span>
-                    <span>Resources</span>
-                </a>
-                <a href="tips.html" class="nav-link">
-                    <span class="nav-icon">💡</span>
-                    <span>Study Tips</span>
-                </a>
-                <a href="goals.html" class="nav-link">
-                    <span class="nav-icon">🎯</span>
-                    <span>Goals</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-icon">✉️</span>
-                    <span>Contact</span>
-                </a>
+            <nav>
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link active">📅 Study Planner</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="tips.html" class="nav-link">💡 Study Tips</a>
+                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="contact.html" class="nav-link">✉️ Contact</a>
             </nav>
 
-            <div class="sidebar-footer">
-                <div class="student-profile">
-                    <div class="student-avatar">HJ</div>
-                    <div class="student-info">
-                        <div class="student-name">Himank</div>
-                        <div class="student-role">B.Tech CSE • Sem 4</div>
-                    </div>
+            <div class="profile">
+                <div class="avatar">HJ</div>
+                <div class="profile-info">
+                    <strong>Himank</strong>
+                    <small>B.Tech CSE • Sem 4</small>
                 </div>
-                <div class="project-note">HTML/CSS College Project 2026</div>
             </div>
+
+            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="main-content">
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
 
-            <!-- Top Header -->
-            <header class="top-header">
-                <div class="header-title-group">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
                     <h1>Study Planner</h1>
-                    <p>Organize your daily study sessions, track tasks, and check weekly targets.</p>
+                    <p>Plan your study sessions, track tasks, and check weekly targets.</p>
                 </div>
 
-                <div class="header-actions">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Search sessions, tasks..." readonly aria-label="Search sessions">
-                    </div>
-                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
-                        <span>🔔</span>
-                        <span class="notification-dot"></span>
-                    </div>
+                <div class="header-tools">
+                    <span class="search-box">🔍 Search sessions...</span>
+                    <span class="bell-btn">🔔</span>
                 </div>
             </header>
 
-            <!-- Planner Split Layout: Daily Study Plan + Weekly Checklist -->
-            <div class="planner-layout">
+            <!-- Two-Column Planner: Daily Plan + Weekly Checklist -->
+            <div class="grid-2">
 
-                <!-- Left Large Card: Daily Study Plan -->
-                <section class="card" aria-labelledby="daily-plan-heading">
-                    <div class="card-header">
+                <!-- Left Card: Daily Study Plan -->
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                         <div>
-                            <h2 class="card-title" id="daily-plan-heading">Daily Study Plan</h2>
-                            <span class="card-subtitle">Scheduled focus blocks for Thursday</span>
+                            <h2 class="card-title">Daily Study Plan</h2>
+                            <span class="card-subtitle" style="margin-bottom: 0;">Scheduled blocks for Thursday</span>
                         </div>
                         <span class="badge badge-purple">4 SESSIONS</span>
                     </div>
 
-                    <div class="session-list">
+                    <article class="item-row">
+                        <div>
+                            <strong>Morning Deep Work <span class="badge badge-purple">Digital Logic</span></strong>
+                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Karnaugh Map minimization exercises.</p>
+                            <small style="color: var(--primary); font-weight: bold;">09:00 AM - 10:30 AM</small>
+                        </div>
+                        <span class="badge badge-green">COMPLETED</span>
+                    </article>
 
-                        <article class="session-item">
-                            <div class="session-main">
-                                <div class="session-header">
-                                    <h3 class="session-title">Morning Deep Work</h3>
-                                    <span class="session-subject">Digital Logic</span>
-                                </div>
-                                <p class="session-task">Solve Karnaugh Map minimization exercises for 4-variable Boolean functions.</p>
-                            </div>
-                            <div class="session-time">09:00 AM - 10:30 AM</div>
-                            <span class="badge badge-green">COMPLETED</span>
-                        </article>
+                    <article class="item-row">
+                        <div>
+                            <strong>Frontend Practice <span class="badge badge-purple">Web Programming</span></strong>
+                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Build responsive card components using CSS.</p>
+                            <small style="color: var(--primary); font-weight: bold;">11:30 AM - 01:00 PM</small>
+                        </div>
+                        <span class="badge badge-amber">IN PROGRESS</span>
+                    </article>
 
-                        <article class="session-item">
-                            <div class="session-main">
-                                <div class="session-header">
-                                    <h3 class="session-title">Frontend Practice</h3>
-                                    <span class="session-subject">Web Programming</span>
-                                </div>
-                                <p class="session-task">Build responsive card components and layout using pure CSS Flexbox and Grid.</p>
-                            </div>
-                            <div class="session-time">11:30 AM - 01:00 PM</div>
-                            <span class="badge badge-amber">IN PROGRESS</span>
-                        </article>
+                    <article class="item-row">
+                        <div>
+                            <strong>Algorithms Lab <span class="badge badge-purple">Data Structures</span></strong>
+                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Binary Search Tree operations in C++.</p>
+                            <small style="color: var(--primary); font-weight: bold;">02:30 PM - 04:00 PM</small>
+                        </div>
+                        <span class="badge badge-purple">UPCOMING</span>
+                    </article>
 
-                        <article class="session-item">
-                            <div class="session-main">
-                                <div class="session-header">
-                                    <h3 class="session-title">Algorithms Lab</h3>
-                                    <span class="session-subject">Data Structures</span>
-                                </div>
-                                <p class="session-task">Code Binary Search Tree insertion and recursive in-order traversal in C++.</p>
-                            </div>
-                            <div class="session-time">02:30 PM - 04:00 PM</div>
-                            <span class="badge badge-purple">UPCOMING</span>
-                        </article>
-
-                        <article class="session-item">
-                            <div class="session-main">
-                                <div class="session-header">
-                                    <h3 class="session-title">Evening Revision</h3>
-                                    <span class="session-subject">Linear Algebra</span>
-                                </div>
-                                <p class="session-task">Calculate eigenvalues, eigenvectors, and verify characteristic equations.</p>
-                            </div>
-                            <div class="session-time">05:30 PM - 07:00 PM</div>
-                            <span class="badge badge-purple">UPCOMING</span>
-                        </article>
-
-                    </div>
+                    <article class="item-row">
+                        <div>
+                            <strong>Evening Revision <span class="badge badge-purple">Linear Algebra</span></strong>
+                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Calculate eigenvalues and eigenvectors.</p>
+                            <small style="color: var(--primary); font-weight: bold;">05:30 PM - 07:00 PM</small>
+                        </div>
+                        <span class="badge badge-purple">UPCOMING</span>
+                    </article>
                 </section>
 
                 <!-- Right Card: Weekly Checklist -->
-                <aside class="card" aria-labelledby="checklist-heading">
-                    <div class="card-header">
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                         <div>
-                            <h2 class="card-title" id="checklist-heading">Weekly Checklist</h2>
-                            <span class="card-subtitle">5 of 7 tasks finished</span>
+                            <h2 class="card-title">Weekly Checklist</h2>
+                            <span class="card-subtitle" style="margin-bottom: 0;">5 of 7 tasks finished</span>
                         </div>
                         <span class="badge badge-purple">71% DONE</span>
                     </div>
 
-                    <div class="checklist-list">
-
-                        <div class="checklist-item completed">
-                            <div class="check-icon done">✓</div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Complete DLD Chapter 3 K-Maps</div>
-                                <div class="checklist-tag">Digital Logic Design • Done Mon</div>
-                            </div>
-                        </div>
-
-                        <div class="checklist-item completed">
-                            <div class="check-icon done">✓</div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Submit Web Programming Lab 2</div>
-                                <div class="checklist-tag">Web Programming • Done Tue</div>
-                            </div>
-                        </div>
-
-                        <div class="checklist-item completed">
-                            <div class="check-icon done">✓</div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Implement Binary Tree in C++</div>
-                                <div class="checklist-tag">Data Structures • Done Wed</div>
-                            </div>
-                        </div>
-
-                        <div class="checklist-item completed">
-                            <div class="check-icon done">✓</div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Solve 5 Linear Algebra questions</div>
-                                <div class="checklist-tag">Linear Algebra • Done Wed</div>
-                            </div>
-                        </div>
-
-                        <div class="checklist-item completed">
-                            <div class="check-icon done">✓</div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Review Active Recall flashcards</div>
-                                <div class="checklist-tag">General Revision • Done Today</div>
-                            </div>
-                        </div>
-
-                        <div class="checklist-item">
-                            <div class="check-icon pending"></div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Practice 10 Stack & Queue viva Qs</div>
-                                <div class="checklist-tag">Data Structures • Due Friday</div>
-                            </div>
-                        </div>
-
-                        <div class="checklist-item">
-                            <div class="check-icon pending"></div>
-                            <div class="checklist-text">
-                                <div class="checklist-title">Take mock test on Eigenvalues</div>
-                                <div class="checklist-tag">Linear Algebra • Due Saturday</div>
-                            </div>
-                        </div>
-
+                    <div class="check-row">
+                        <span class="check-icon done">✓</span>
+                        <div class="check-done">Complete DLD Chapter 3 K-Maps</div>
                     </div>
-                </aside>
+
+                    <div class="check-row">
+                        <span class="check-icon done">✓</span>
+                        <div class="check-done">Submit Web Programming Lab 2</div>
+                    </div>
+
+                    <div class="check-row">
+                        <span class="check-icon done">✓</span>
+                        <div class="check-done">Implement Binary Tree in C++</div>
+                    </div>
+
+                    <div class="check-row">
+                        <span class="check-icon done">✓</span>
+                        <div class="check-done">Solve 5 Linear Algebra questions</div>
+                    </div>
+
+                    <div class="check-row">
+                        <span class="check-icon done">✓</span>
+                        <div class="check-done">Review Active Recall flashcards</div>
+                    </div>
+
+                    <div class="check-row">
+                        <span class="check-icon pending"></span>
+                        <div>Practice 10 Stack & Queue viva Qs</div>
+                    </div>
+
+                    <div class="check-row">
+                        <span class="check-icon pending"></span>
+                        <div>Take mock test on Eigenvalues</div>
+                    </div>
+                </section>
 
             </div>
 
             <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
-                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
             </footer>
 
         </main>
