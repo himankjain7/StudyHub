@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goals | StudyHub - Student Productivity Portal</title>
+    <title>Goals | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,208 +12,165 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar Navigation -->
+        <!-- 1. Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <div class="brand-icon">🎓</div>
-                <div class="brand-text">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
                     <h2>StudyHub</h2>
-                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                    <small>STUDENT PORTAL</small>
                 </div>
             </div>
 
-            <nav class="sidebar-nav" aria-label="Main navigation">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-icon">📊</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="planner.html" class="nav-link">
-                    <span class="nav-icon">📅</span>
-                    <span>Study Planner</span>
-                </a>
-                <a href="resources.html" class="nav-link">
-                    <span class="nav-icon">📚</span>
-                    <span>Resources</span>
-                </a>
-                <a href="tips.html" class="nav-link">
-                    <span class="nav-icon">💡</span>
-                    <span>Study Tips</span>
-                </a>
-                <a href="goals.html" class="nav-link active" aria-current="page">
-                    <span class="nav-icon">🎯</span>
-                    <span>Goals</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-icon">✉️</span>
-                    <span>Contact</span>
-                </a>
+            <nav>
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="tips.html" class="nav-link">💡 Study Tips</a>
+                <a href="goals.html" class="nav-link active">🎯 Goals</a>
+                <a href="contact.html" class="nav-link">✉️ Contact</a>
             </nav>
 
-            <div class="sidebar-footer">
-                <div class="student-profile">
-                    <div class="student-avatar">HJ</div>
-                    <div class="student-info">
-                        <div class="student-name">Himank</div>
-                        <div class="student-role">B.Tech CSE • Sem 4</div>
-                    </div>
+            <div class="profile">
+                <div class="avatar">HJ</div>
+                <div class="profile-info">
+                    <strong>Himank</strong>
+                    <small>B.Tech CSE • Sem 4</small>
                 </div>
-                <div class="project-note">HTML/CSS College Project 2026</div>
             </div>
+
+            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="main-content">
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
 
-            <!-- Top Header -->
-            <header class="top-header">
-                <div class="header-title-group">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
                     <h1>Milestone Semester Goals</h1>
-                    <p>Track academic targets, monitor progress percentages, and meet project deadlines.</p>
+                    <p>Track academic targets, monitor progress percentages, and meet deadlines.</p>
                 </div>
 
-                <div class="header-actions">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Search goals..." readonly aria-label="Search goals">
-                    </div>
-                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
-                        <span>🔔</span>
-                        <span class="notification-dot"></span>
-                    </div>
+                <div class="header-tools">
+                    <span class="search-box">🔍 Search goals...</span>
+                    <span class="bell-btn">🔔</span>
                 </div>
             </header>
 
-            <!-- Large Milestone Semester Goals Card -->
-            <section class="card" aria-labelledby="milestones-heading">
-                <div class="card-header">
+            <!-- Milestone Semester Goals Card -->
+            <section class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                     <div>
-                        <h2 class="card-title" id="milestones-heading">Milestone Semester Goals</h2>
-                        <span class="card-subtitle">Active targets categorized by priority level</span>
+                        <h2 class="card-title">Milestone Semester Goals</h2>
+                        <span class="card-subtitle" style="margin-bottom: 0;">Active targets categorized by priority</span>
                     </div>
                     <span class="badge badge-purple">5 ACTIVE GOALS</span>
                 </div>
 
-                <div class="goals-list">
+                <!-- Goal 1: High Priority -->
+                <article class="item-row" style="display: block;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div>
+                            <span class="badge badge-red">HIGH PRIORITY</span>
+                            <strong style="margin-left: 8px;">Master Digital Logic Minimization & Counters</strong>
+                        </div>
+                        <small style="color: var(--muted);">📅 Target: Oct 15, 2026</small>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill fill-red" style="width: 85%;"></div>
+                    </div>
+                    <small style="font-weight: bold; color: var(--text);">85% Completed</small>
+                </article>
 
-                    <!-- Goal 1: High Priority -->
-                    <article class="goal-item-row">
-                        <div class="goal-row-header">
-                            <div class="goal-title-group">
-                                <span class="badge badge-red">HIGH PRIORITY</span>
-                                <h3 class="goal-title">Master Digital Logic Minimization & Counters</h3>
-                            </div>
-                            <span class="goal-target-date">📅 Target: Oct 15, 2026</span>
+                <!-- Goal 2: High Priority -->
+                <article class="item-row" style="display: block;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div>
+                            <span class="badge badge-red">HIGH PRIORITY</span>
+                            <strong style="margin-left: 8px;">Complete Web Programming UI Dashboard Project</strong>
                         </div>
-                        <div class="goal-progress-wrapper">
-                            <div class="progress-track" aria-label="Progress: 85%">
-                                <div class="progress-fill priority-high" style="width: 85%;"></div>
-                            </div>
-                            <span class="goal-percentage">85%</span>
-                        </div>
-                    </article>
+                        <small style="color: var(--muted);">📅 Target: Oct 20, 2026</small>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill fill-red" style="width: 75%;"></div>
+                    </div>
+                    <small style="font-weight: bold; color: var(--text);">75% Completed</small>
+                </article>
 
-                    <!-- Goal 2: High Priority -->
-                    <article class="goal-item-row">
-                        <div class="goal-row-header">
-                            <div class="goal-title-group">
-                                <span class="badge badge-red">HIGH PRIORITY</span>
-                                <h3 class="goal-title">Complete Web Programming UI Dashboard Project</h3>
-                            </div>
-                            <span class="goal-target-date">📅 Target: Oct 20, 2026</span>
+                <!-- Goal 3: Medium Priority -->
+                <article class="item-row" style="display: block;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div>
+                            <span class="badge badge-amber">MEDIUM PRIORITY</span>
+                            <strong style="margin-left: 8px;">Solve 50 Data Structures Problems on BST & Graphs</strong>
                         </div>
-                        <div class="goal-progress-wrapper">
-                            <div class="progress-track" aria-label="Progress: 75%">
-                                <div class="progress-fill priority-high" style="width: 75%;"></div>
-                            </div>
-                            <span class="goal-percentage">75%</span>
-                        </div>
-                    </article>
+                        <small style="color: var(--muted);">📅 Target: Nov 05, 2026</small>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill fill-amber" style="width: 60%;"></div>
+                    </div>
+                    <small style="font-weight: bold; color: var(--text);">60% Completed</small>
+                </article>
 
-                    <!-- Goal 3: Medium Priority -->
-                    <article class="goal-item-row">
-                        <div class="goal-row-header">
-                            <div class="goal-title-group">
-                                <span class="badge badge-amber">MEDIUM PRIORITY</span>
-                                <h3 class="goal-title">Solve 50 Data Structures Problems on BST & Graphs</h3>
-                            </div>
-                            <span class="goal-target-date">📅 Target: Nov 05, 2026</span>
+                <!-- Goal 4: Medium Priority -->
+                <article class="item-row" style="display: block;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div>
+                            <span class="badge badge-amber">MEDIUM PRIORITY</span>
+                            <strong style="margin-left: 8px;">Prepare Linear Algebra Midterm Formula Cheatsheet</strong>
                         </div>
-                        <div class="goal-progress-wrapper">
-                            <div class="progress-track" aria-label="Progress: 60%">
-                                <div class="progress-fill priority-medium" style="width: 60%;"></div>
-                            </div>
-                            <span class="goal-percentage">60%</span>
-                        </div>
-                    </article>
+                        <small style="color: var(--muted);">📅 Target: Nov 12, 2026</small>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill fill-amber" style="width: 50%;"></div>
+                    </div>
+                    <small style="font-weight: bold; color: var(--text);">50% Completed</small>
+                </article>
 
-                    <!-- Goal 4: Medium Priority -->
-                    <article class="goal-item-row">
-                        <div class="goal-row-header">
-                            <div class="goal-title-group">
-                                <span class="badge badge-amber">MEDIUM PRIORITY</span>
-                                <h3 class="goal-title">Prepare Linear Algebra Midterm Formula Cheatsheet</h3>
-                            </div>
-                            <span class="goal-target-date">📅 Target: Nov 12, 2026</span>
+                <!-- Goal 5: Low Priority -->
+                <article class="item-row" style="display: block;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div>
+                            <span class="badge badge-green">LOW PRIORITY</span>
+                            <strong style="margin-left: 8px;">Maintain 14-Day Consistent Study Streak</strong>
                         </div>
-                        <div class="goal-progress-wrapper">
-                            <div class="progress-track" aria-label="Progress: 50%">
-                                <div class="progress-fill priority-medium" style="width: 50%;"></div>
-                            </div>
-                            <span class="goal-percentage">50%</span>
-                        </div>
-                    </article>
-
-                    <!-- Goal 5: Low Priority -->
-                    <article class="goal-item-row">
-                        <div class="goal-row-header">
-                            <div class="goal-title-group">
-                                <span class="badge badge-green">LOW PRIORITY</span>
-                                <h3 class="goal-title">Maintain 14-Day Consistent Study Streak</h3>
-                            </div>
-                            <span class="goal-target-date">📅 Target: Ongoing</span>
-                        </div>
-                        <div class="goal-progress-wrapper">
-                            <div class="progress-track" aria-label="Progress: 90%">
-                                <div class="progress-fill priority-low" style="width: 90%;"></div>
-                            </div>
-                            <span class="goal-percentage">90%</span>
-                        </div>
-                    </article>
-
-                </div>
+                        <small style="color: var(--muted);">📅 Target: Ongoing</small>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill fill-green" style="width: 90%;"></div>
+                    </div>
+                    <small style="font-weight: bold; color: var(--text);">90% Completed</small>
+                </article>
             </section>
 
-            <!-- Goals Summary & Action Steps -->
-            <section class="card" aria-labelledby="summary-heading">
-                <div class="card-header">
-                    <div>
-                        <h2 class="card-title" id="summary-heading">Goals Summary & Academic Strategy</h2>
-                        <span class="card-subtitle">Techniques for meeting each deadline</span>
-                    </div>
-                </div>
+            <!-- Goals Summary & Academic Strategy -->
+            <section class="card">
+                <h2 class="card-title">Goals Summary & Academic Strategy</h2>
+                <span class="card-subtitle">Techniques for meeting each deadline</span>
 
-                <div class="info-row-grid">
-                    <div class="info-box">
-                        <h4>🎯 Daily Study Discipline</h4>
-                        <p>Dedicate at least 3 hours of focused study every day across core technical subjects.</p>
+                <div class="grid-3">
+                    <div class="item-row" style="display: block;">
+                        <strong>🎯 Daily Study Discipline</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Dedicate at least 3 hours of focused study every day across subjects.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h4>📊 Weekly Milestone Audits</h4>
-                        <p>Review completion percentages every Sunday night to readjust schedules in your Study Planner.</p>
+                    <div class="item-row" style="display: block;">
+                        <strong>📊 Weekly Milestone Audits</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Review completion percentages every Sunday to update the Study Planner.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h4>🏆 Consistent Progress</h4>
-                        <p>Consistent daily effort compounds over the semester and eliminates last-minute exam stress.</p>
+                    <div class="item-row" style="display: block;">
+                        <strong>🏆 Consistent Progress</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Regular daily progress eliminates last-minute semester examination stress.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
-                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
             </footer>
 
         </main>
