@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tips | StudyHub - Student Productivity Portal</title>
+    <title>Study Tips | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,214 +12,172 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar Navigation -->
+        <!-- 1. Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <div class="brand-icon">🎓</div>
-                <div class="brand-text">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
                     <h2>StudyHub</h2>
-                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                    <small>STUDENT PORTAL</small>
                 </div>
             </div>
 
-            <nav class="sidebar-nav" aria-label="Main navigation">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-icon">📊</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="planner.html" class="nav-link">
-                    <span class="nav-icon">📅</span>
-                    <span>Study Planner</span>
-                </a>
-                <a href="resources.html" class="nav-link">
-                    <span class="nav-icon">📚</span>
-                    <span>Resources</span>
-                </a>
-                <a href="tips.html" class="nav-link active" aria-current="page">
-                    <span class="nav-icon">💡</span>
-                    <span>Study Tips</span>
-                </a>
-                <a href="goals.html" class="nav-link">
-                    <span class="nav-icon">🎯</span>
-                    <span>Goals</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-icon">✉️</span>
-                    <span>Contact</span>
-                </a>
+            <nav>
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="tips.html" class="nav-link active">💡 Study Tips</a>
+                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="contact.html" class="nav-link">✉️ Contact</a>
             </nav>
 
-            <div class="sidebar-footer">
-                <div class="student-profile">
-                    <div class="student-avatar">HJ</div>
-                    <div class="student-info">
-                        <div class="student-name">Himank</div>
-                        <div class="student-role">B.Tech CSE • Sem 4</div>
-                    </div>
+            <div class="profile">
+                <div class="avatar">HJ</div>
+                <div class="profile-info">
+                    <strong>Himank</strong>
+                    <small>B.Tech CSE • Sem 4</small>
                 </div>
-                <div class="project-note">HTML/CSS College Project 2026</div>
             </div>
+
+            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="main-content">
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
 
-            <!-- Top Header -->
-            <header class="top-header">
-                <div class="header-title-group">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
                     <h1>Study Tips & Techniques</h1>
-                    <p>Evidence-based learning strategies, mental frameworks, and daily productivity routines.</p>
+                    <p>Evidence-based learning strategies, mental frameworks, and daily routines.</p>
                 </div>
 
-                <div class="header-actions">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Search study tips..." readonly aria-label="Search tips">
-                    </div>
-                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
-                        <span>🔔</span>
-                        <span class="notification-dot"></span>
-                    </div>
+                <div class="header-tools">
+                    <span class="search-box">🔍 Search tips...</span>
+                    <span class="bell-btn">🔔</span>
                 </div>
             </header>
 
             <!-- Three Top Strategy Cards -->
-            <section class="tips-grid-3" aria-label="Core study techniques">
+            <section class="grid-3">
 
                 <!-- 1. Active Recall -->
-                <article class="tip-strategy-card">
-                    <div class="tip-card-top">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                            <div class="tip-icon">🧠</div>
-                            <span class="badge badge-purple">HIGH RETENTION</span>
-                        </div>
-                        <h3>Active Recall</h3>
-                        <p>
-                            Instead of passively re-reading notes, test yourself by closing the book
-                            and retrieving key facts from memory to create stronger neural pathways.
-                        </p>
+                <article class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">🧠</span>
+                        <span class="badge badge-purple">HIGH RETENTION</span>
                     </div>
-                    <div class="tip-key-advice">
-                        <strong>Action Tip:</strong> Turn lecture headings into practice questions and quiz yourself before each study block.
+                    <h2 class="card-title">Active Recall</h2>
+                    <p style="font-size: 13px; color: var(--muted); margin: 8px 0 14px;">
+                        Instead of passively re-reading notes, test yourself by closing the book and retrieving key facts from memory.
+                    </p>
+                    <div style="background-color: var(--background); padding: 10px; border-radius: var(--radius); font-size: 12px;">
+                        <strong>Tip:</strong> Convert headings into questions and self-test before reading.
                     </div>
                 </article>
 
                 <!-- 2. Pomodoro Method -->
-                <article class="tip-strategy-card">
-                    <div class="tip-card-top">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                            <div class="tip-icon">⏱️</div>
-                            <span class="badge badge-amber">MAX FOCUS</span>
-                        </div>
-                        <h3>Pomodoro Method</h3>
-                        <p>
-                            Work in strict 25-minute deep focus sprints followed by 5-minute restorative breaks.
-                            This cycle maintains high energy and combats mental fatigue.
-                        </p>
+                <article class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">⏱️</span>
+                        <span class="badge badge-amber">MAX FOCUS</span>
                     </div>
-                    <div class="tip-key-advice">
-                        <strong>Action Tip:</strong> Complete 4 Pomodoros before taking an extended 25-minute walk or hydration break.
+                    <h2 class="card-title">Pomodoro Method</h2>
+                    <p style="font-size: 13px; color: var(--muted); margin: 8px 0 14px;">
+                        Work in 25-minute deep focus sprints followed by 5-minute mental breaks to maintain stamina and avoid burnout.
+                    </p>
+                    <div style="background-color: var(--background); padding: 10px; border-radius: var(--radius); font-size: 12px;">
+                        <strong>Tip:</strong> After 4 sessions, reward yourself with an extended 25-min break.
                     </div>
                 </article>
 
                 <!-- 3. Feynman Technique -->
-                <article class="tip-strategy-card">
-                    <div class="tip-card-top">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                            <div class="tip-icon">💡</div>
-                            <span class="badge badge-green">DEEP MASTERY</span>
-                        </div>
-                        <h3>Feynman Technique</h3>
-                        <p>
-                            Explain complex engineering concepts in plain, beginner-friendly terms.
-                            Any point where you struggle reveals an immediate gap to revisit in the notes.
-                        </p>
+                <article class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">💡</span>
+                        <span class="badge badge-green">DEEP MASTERY</span>
                     </div>
-                    <div class="tip-key-advice">
-                        <strong>Action Tip:</strong> Write down explanations as if teaching a freshman peer without using technical jargon.
+                    <h2 class="card-title">Feynman Technique</h2>
+                    <p style="font-size: 13px; color: var(--muted); margin: 8px 0 14px;">
+                        Explain difficult engineering concepts in plain language as if teaching a freshman peer to uncover gaps.
+                    </p>
+                    <div style="background-color: var(--background); padding: 10px; border-radius: var(--radius); font-size: 12px;">
+                        <strong>Tip:</strong> Identify where you hesitate and re-check reference notes.
                     </div>
                 </article>
 
             </section>
 
             <!-- Large "Optimal Daily Study Routine" Card -->
-            <section class="card" aria-labelledby="routine-heading">
-                <div class="card-header">
+            <section class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                     <div>
-                        <h2 class="card-title" id="routine-heading">Optimal Daily Study Routine</h2>
-                        <span class="card-subtitle">Recommended timeline based on cognitive peak hours</span>
+                        <h2 class="card-title">Optimal Daily Study Routine</h2>
+                        <span class="card-subtitle" style="margin-bottom: 0;">Recommended timeline for peak academic output</span>
                     </div>
                     <span class="badge badge-purple">DAILY SCHEDULE</span>
                 </div>
 
-                <div class="routine-list">
-
-                    <div class="routine-row">
-                        <div class="routine-time">07:00 AM - 08:30 AM</div>
-                        <div class="routine-content">
-                            <h4>Morning Prime Time Revision</h4>
-                            <p>Review theoretical topics and complex formulas while your mental clarity is highest and distractions are minimal.</p>
-                        </div>
+                <article class="item-row">
+                    <div>
+                        <strong>Morning Prime Time Revision</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Review complex formulas and theoretical topics while mental clarity is highest.</p>
                     </div>
+                    <span style="font-weight: bold; color: var(--primary); white-space: nowrap;">07:00 AM - 08:30 AM</span>
+                </article>
 
-                    <div class="routine-row">
-                        <div class="routine-time">10:00 AM - 01:00 PM</div>
-                        <div class="routine-content">
-                            <h4>Core Problem Solving & Coding</h4>
-                            <p>Tackle algorithmic challenges in Data Structures and practice CSS layout construction during peak analytical hours.</p>
-                        </div>
+                <article class="item-row">
+                    <div>
+                        <strong>Core Problem Solving & Coding</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Tackle algorithmic questions in Data Structures and practice CSS layout construction.</p>
                     </div>
+                    <span style="font-weight: bold; color: var(--primary); white-space: nowrap;">10:00 AM - 01:00 PM</span>
+                </article>
 
-                    <div class="routine-row">
-                        <div class="routine-time">03:00 PM - 05:00 PM</div>
-                        <div class="routine-content">
-                            <h4>Practical Lab & Applied Exercises</h4>
-                            <p>Dedicate afternoon hours to laboratory manuals, group discussions, and verifying solved numerical problems.</p>
-                        </div>
+                <article class="item-row">
+                    <div>
+                        <strong>Practical Lab & Applied Work</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Dedicate afternoon hours to laboratory manuals and verifying solved numerical problems.</p>
                     </div>
+                    <span style="font-weight: bold; color: var(--primary); white-space: nowrap;">03:00 PM - 05:00 PM</span>
+                </article>
 
-                    <div class="routine-row">
-                        <div class="routine-time">07:30 PM - 09:00 PM</div>
-                        <div class="routine-content">
-                            <h4>Spaced Retrieval & Day Recap</h4>
-                            <p>Run quick flashcard quizzes on today's learning, review tomorrow's timetable, and set 3 key priorities in your planner.</p>
-                        </div>
+                <article class="item-row">
+                    <div>
+                        <strong>Spaced Retrieval & Day Recap</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Run quick flashcard quizzes on today's learning and organize tomorrow's priorities.</p>
                     </div>
-
-                </div>
+                    <span style="font-weight: bold; color: var(--primary); white-space: nowrap;">07:30 PM - 09:00 PM</span>
+                </article>
             </section>
 
             <!-- Essential Study Habits -->
-            <section class="card" aria-labelledby="habits-heading">
-                <div class="card-header">
-                    <div>
-                        <h2 class="card-title" id="habits-heading">Essential Study Habits</h2>
-                        <span class="card-subtitle">Consistency principles for semester exams</span>
-                    </div>
-                </div>
+            <section class="card">
+                <h2 class="card-title">Essential Study Habits</h2>
+                <span class="card-subtitle">Consistency principles for semester examinations</span>
 
-                <div class="info-row-grid">
-                    <div class="info-box">
-                        <h4>🚫 Eliminate Digital Distractions</h4>
-                        <p>Keep your phone in another room or set it to 'Do Not Disturb' mode during deep work blocks.</p>
+                <div class="grid-3">
+                    <div class="item-row" style="display: block;">
+                        <strong>🚫 Eliminate Distractions</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Keep your phone in another room or on Do Not Disturb mode during study blocks.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h4>🎯 Set Micro Targets</h4>
-                        <p>Focus on completing 2 specific sub-topics per session instead of vague goals like "study math".</p>
+                    <div class="item-row" style="display: block;">
+                        <strong>🎯 Set Micro Targets</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Aim to complete 2 specific sub-topics per session instead of vague goals.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h4>🔄 Spaced Repetition</h4>
-                        <p>Review tricky topics on day 1, day 3, and day 7 to lock information into permanent long-term storage.</p>
+                    <div class="item-row" style="display: block;">
+                        <strong>🔄 Spaced Repetition</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Review difficult topics on day 1, day 3, and day 7 to lock in memory.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
-                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
             </footer>
 
         </main>
