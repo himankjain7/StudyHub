@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | StudyHub</title>
+    <title>Resources | StudyHub - Student Productivity Portal</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,132 +12,280 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar -->
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">🎓</div>
+                <div class="brand-text">
+                    <h2>StudyHub</h2>
+                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                </div>
+            </div>
 
-            <h2>StudyHub</h2>
-
-            <nav aria-label="Main navigation">
-                <a href="index.html">Dashboard</a>
-                <a href="planner.html">Study Planner</a>
-                <a href="resources.html" aria-current="page">Resources</a>
-                <a href="tips.html">Study Tips</a>
-                <a href="goals.html">Goals</a>
-                <a href="contact.html">Contact</a>
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="planner.html" class="nav-link">
+                    <span class="nav-icon">📅</span>
+                    <span>Study Planner</span>
+                </a>
+                <a href="resources.html" class="nav-link active" aria-current="page">
+                    <span class="nav-icon">📚</span>
+                    <span>Resources</span>
+                </a>
+                <a href="tips.html" class="nav-link">
+                    <span class="nav-icon">💡</span>
+                    <span>Study Tips</span>
+                </a>
+                <a href="goals.html" class="nav-link">
+                    <span class="nav-icon">🎯</span>
+                    <span>Goals</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <span class="nav-icon">✉️</span>
+                    <span>Contact</span>
+                </a>
             </nav>
 
+            <div class="sidebar-footer">
+                <div class="student-profile">
+                    <div class="student-avatar">HJ</div>
+                    <div class="student-info">
+                        <div class="student-name">Himank</div>
+                        <div class="student-role">B.Tech CSE • Sem 4</div>
+                    </div>
+                </div>
+                <div class="project-note">HTML/CSS College Project 2026</div>
+            </div>
         </aside>
 
-        <!-- Main Content -->
+        <!-- Main Content Area -->
         <main class="main-content" id="main-content">
 
-            <header class="header">
-                <h1>Subject Resources</h1>
-                <p>Find useful study materials for your subjects.</p>
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-title-group">
+                    <h1>Subject Resources</h1>
+                    <p>Curated lecture notes, laboratory manuals, reference sheets, and practice links.</p>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search notes, topics..." readonly aria-label="Search resources">
+                    </div>
+                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
+                        <span>🔔</span>
+                        <span class="notification-dot"></span>
+                    </div>
+                </div>
             </header>
 
-            <!-- Resources Introduction -->
-            <section class="welcome" aria-labelledby="resources-heading">
-                <h2 id="resources-heading">Learning Materials</h2>
-                <p>
-                    Use these resources to improve your understanding and revision.
-                </p>
+            <!-- Subject Resource Cards Grid -->
+            <section class="resource-grid" aria-label="Core subject resources">
+
+                <!-- 1. Digital Logic Design -->
+                <article class="resource-card">
+                    <div class="resource-banner resource-banner-logic">
+                        <div>
+                            <strong>Digital Systems</strong>
+                            <div style="font-size: 12px; opacity: 0.9;">Gates, K-Maps & Circuits</div>
+                        </div>
+                        <div class="resource-banner-icon">⚡</div>
+                    </div>
+                    <div class="resource-body">
+                        <div class="resource-header">
+                            <h3>Digital Logic Design</h3>
+                            <span class="badge badge-blue">CODE: CS201</span>
+                        </div>
+                        <p class="resource-desc">
+                            Boolean algebra simplification, combinational circuit synthesis, flip-flops,
+                            synchronous counters, and finite state machines.
+                        </p>
+                        <div class="resource-links">
+                            <a href="#dld-notes" class="resource-link-item">
+                                <span>📄</span>
+                                <span>Lecture Notes & Cheatsheet (PDF)</span>
+                            </a>
+                            <a href="#dld-lab" class="resource-link-item">
+                                <span>🧪</span>
+                                <span>Digital Logic Lab Manual</span>
+                            </a>
+                            <a href="#dld-problems" class="resource-link-item">
+                                <span>💡</span>
+                                <span>Solved Boolean Algebra Problems</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. Web Programming -->
+                <article class="resource-card">
+                    <div class="resource-banner resource-banner-web">
+                        <div>
+                            <strong>Frontend Foundations</strong>
+                            <div style="font-size: 12px; opacity: 0.9;">HTML5, Modern CSS & UI</div>
+                        </div>
+                        <div class="resource-banner-icon">🌐</div>
+                    </div>
+                    <div class="resource-body">
+                        <div class="resource-header">
+                            <h3>Web Programming</h3>
+                            <span class="badge badge-purple">CODE: CS204</span>
+                        </div>
+                        <p class="resource-desc">
+                            Semantic HTML5 structure, CSS Flexbox and Grid layouts, responsive typography,
+                            clean design systems, and accessible interfaces.
+                        </p>
+                        <div class="resource-links">
+                            <a href="#web-guide" class="resource-link-item">
+                                <span>📄</span>
+                                <span>HTML5 & CSS3 Quick Reference</span>
+                            </a>
+                            <a href="#web-templates" class="resource-link-item">
+                                <span>💻</span>
+                                <span>Starter Layout Templates</span>
+                            </a>
+                            <a href="#web-responsive" class="resource-link-item">
+                                <span>🎯</span>
+                                <span>Responsive Web Design Guide</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. Data Structures -->
+                <article class="resource-card">
+                    <div class="resource-banner resource-banner-dsa">
+                        <div>
+                            <strong>Algorithms & Data</strong>
+                            <div style="font-size: 12px; opacity: 0.9;">Trees, Stacks & Complexity</div>
+                        </div>
+                        <div class="resource-banner-icon">🌳</div>
+                    </div>
+                    <div class="resource-body">
+                        <div class="resource-header">
+                            <h3>Data Structures</h3>
+                            <span class="badge badge-green">CODE: CS202</span>
+                        </div>
+                        <p class="resource-desc">
+                            Arrays, linked lists, stacks, queues, binary search trees, graph representations,
+                            and time/space complexity analysis.
+                        </p>
+                        <div class="resource-links">
+                            <a href="#dsa-notes" class="resource-link-item">
+                                <span>📄</span>
+                                <span>Core Data Structures Handout</span>
+                            </a>
+                            <a href="#dsa-visuals" class="resource-link-item">
+                                <span>📊</span>
+                                <span>Algorithm Complexity Chart</span>
+                            </a>
+                            <a href="#dsa-viva" class="resource-link-item">
+                                <span>📝</span>
+                                <span>Viva & Interview Q&A Repository</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. Linear Algebra -->
+                <article class="resource-card">
+                    <div class="resource-banner resource-banner-math">
+                        <div>
+                            <strong>Applied Mathematics</strong>
+                            <div style="font-size: 12px; opacity: 0.9;">Matrices & Vector Spaces</div>
+                        </div>
+                        <div class="resource-banner-icon">📐</div>
+                    </div>
+                    <div class="resource-body">
+                        <div class="resource-header">
+                            <h3>Linear Algebra</h3>
+                            <span class="badge badge-amber">CODE: MA201</span>
+                        </div>
+                        <p class="resource-desc">
+                            Matrix operations, Gaussian elimination, determinants, vector spaces,
+                            eigenvalues, eigenvectors, and linear transformations.
+                        </p>
+                        <div class="resource-links">
+                            <a href="#math-formulas" class="resource-link-item">
+                                <span>📄</span>
+                                <span>Essential Formulas & Theorems</span>
+                            </a>
+                            <a href="#math-solved" class="resource-link-item">
+                                <span>📚</span>
+                                <span>Solved Examination Problems</span>
+                            </a>
+                            <a href="#math-transforms" class="resource-link-item">
+                                <span>📝</span>
+                                <span>Matrix Transformation Guide</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
             </section>
 
-            <!-- Resource Cards -->
-            <section class="stats" aria-label="Subject resources">
-
-                <div class="card">
-                    <h3>Digital Logic Design</h3>
-                    <p>Notes</p>
-                    <p>Boolean algebra, logic gates and number systems.</p>
+            <!-- Resource Categories Overview -->
+            <section class="card" aria-labelledby="categories-heading">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="categories-heading">Resource Categories</h2>
+                        <span class="card-subtitle">Organized by preparation purpose</span>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>Web Programming</h3>
-                    <p>Practice</p>
-                    <p>HTML tags, CSS properties and webpage layouts.</p>
-                </div>
+                <div class="info-row-grid">
+                    <div class="info-box">
+                        <h4>📝 Study Notes</h4>
+                        <p>Concise concept summaries and key definitions to review before class or revision sessions.</p>
+                    </div>
 
-                <div class="card">
-                    <h3>Data Structures</h3>
-                    <p>Concepts</p>
-                    <p>Arrays, stacks, queues and linked lists.</p>
-                </div>
+                    <div class="info-box">
+                        <h4>🧪 Practice Materials</h4>
+                        <p>Hands-on lab manuals, coding challenges, and worked numerical problems to solidify mastery.</p>
+                    </div>
 
-                <div class="card">
-                    <h3>Linear Algebra</h3>
-                    <p>Revision</p>
-                    <p>Matrices, determinants and systems of equations.</p>
+                    <div class="info-box">
+                        <h4>🎯 Revision Kits</h4>
+                        <p>Quick formula cheat sheets, past semester papers, and frequently asked viva questions.</p>
+                    </div>
                 </div>
-
             </section>
 
-            <!-- Resource Categories -->
-            <section class="schedule" aria-labelledby="categories-heading">
-
-                <h2 id="categories-heading">Resource Categories</h2>
-
-                <div class="schedule-item">
-                    <h3>Study Notes</h3>
-                    <p>
-                        Use summarized notes to review important concepts
-                        and key points before studying or revising.
-                    </p>
+            <!-- How to Use These Resources -->
+            <section class="card" aria-labelledby="usage-heading">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="usage-heading">How to Use These Resources</h2>
+                        <span class="card-subtitle">Maximize your learning efficiency</span>
+                    </div>
                 </div>
 
-                <div class="schedule-item">
-                    <h3>Practice Materials</h3>
-                    <p>
-                        Practice examples and exercises to strengthen your
-                        understanding of different subjects.
-                    </p>
-                </div>
+                <div class="info-row-grid">
+                    <div class="info-box">
+                        <h4>1. Target Key Weaknesses</h4>
+                        <p>Identify topics from your Study Planner that need reinforcement before downloading files.</p>
+                    </div>
 
-                <div class="schedule-item">
-                    <h3>Revision Materials</h3>
-                    <p>
-                        Review important formulas, definitions and concepts
-                        to prepare for tests and examinations.
-                    </p>
-                </div>
+                    <div class="info-box">
+                        <h4>2. Solve Before Reading</h4>
+                        <p>Attempt the practice problems first, then refer to the solved answer sheets for guidance.</p>
+                    </div>
 
+                    <div class="info-box">
+                        <h4>3. Synthesize Summaries</h4>
+                        <p>Consolidate formula sheets into your own handwritten notes to reinforce long-term memory.</p>
+                    </div>
+                </div>
             </section>
 
-            <!-- How to Use Resources -->
-            <section class="schedule" aria-labelledby="usage-heading">
-
-                <h2 id="usage-heading">How to Use These Resources</h2>
-
-                <div class="schedule-item">
-                    <h3>1. Choose a Subject</h3>
-                    <p>
-                        Select the subject you want to study based on your
-                        current learning or revision needs.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>2. Review the Material</h3>
-                    <p>
-                        Read through the notes and concepts carefully and
-                        focus on the topics you find difficult.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>3. Practice What You Learned</h3>
-                    <p>
-                        Solve examples and practice questions to check your
-                        understanding and strengthen your knowledge.
-                    </p>
-                </div>
-
-            </section>
-
-            <!-- Footer -->
+            <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
+                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
             </footer>
 
         </main>
@@ -147,4 +295,3 @@
 </body>
 
 </html>
-
