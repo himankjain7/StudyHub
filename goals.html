@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Goals | StudyHub</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,129 +14,197 @@
 
     <div class="dashboard">
 
+        <!-- Sidebar -->
         <aside class="sidebar">
 
             <h2>StudyHub</h2>
 
             <nav aria-label="Main navigation">
+
                 <a href="index.html">Dashboard</a>
                 <a href="planner.html">Study Planner</a>
                 <a href="resources.html">Resources</a>
                 <a href="tips.html">Study Tips</a>
                 <a href="goals.html" aria-current="page">Goals</a>
                 <a href="contact.html">Contact</a>
+
             </nav>
 
         </aside>
 
+        <!-- Main Content -->
         <main class="main-content" id="main-content">
 
+            <!-- Header -->
             <header class="header">
+
                 <h1>My Goals</h1>
                 <p>Set targets and track your progress.</p>
+
             </header>
 
+            <!-- Introduction -->
             <section class="welcome" aria-labelledby="goals-heading">
+
                 <h2 id="goals-heading">Stay Focused on Your Goals</h2>
+
                 <p>
                     Small achievements every day can lead to big results.
                 </p>
+
             </section>
 
-            <section class="stats" aria-label="Study goals">
+            <!-- Study Goals -->
+            <section class="stats goals-grid" aria-label="Study goals">
 
-                <div class="card">
+                <article class="card goal-card">
+
                     <h3>Daily Study Goal</h3>
-                    <p>3 Hours</p>
-                    <p>Study for at least three hours every day.</p>
-                    <p>
+
+                    <p class="goal-target">3 Hours</p>
+
+                    <p class="goal-description">
+                        Study for at least three hours every day.
+                    </p>
+
+                    <p class="priority">
                         <strong>Priority:</strong>
                         <span class="priority-high">High</span>
                     </p>
-                </div>
 
-                <div class="card">
+                </article>
+
+                <article class="card goal-card">
+
                     <h3>Weekly Revision</h3>
-                    <p>5 Topics</p>
-                    <p>Revise five important topics every week.</p>
-                    <p>
+
+                    <p class="goal-target">5 Topics</p>
+
+                    <p class="goal-description">
+                        Revise five important topics every week.
+                    </p>
+
+                    <p class="priority">
                         <strong>Priority:</strong>
                         <span class="priority-high">High</span>
                     </p>
-                </div>
 
-                <div class="card">
+                </article>
+
+                <article class="card goal-card">
+
                     <h3>Assignment Target</h3>
-                    <p>2 Tasks</p>
-                    <p>Complete two assignments before the deadline.</p>
-                    <p>
+
+                    <p class="goal-target">2 Tasks</p>
+
+                    <p class="goal-description">
+                        Complete two assignments before the deadline.
+                    </p>
+
+                    <p class="priority">
                         <strong>Priority:</strong>
                         <span class="priority-medium">Medium</span>
                     </p>
-                </div>
 
-                <div class="card">
+                </article>
+
+                <article class="card goal-card">
+
                     <h3>Consistency Goal</h3>
-                    <p>7 Days</p>
-                    <p>Maintain a regular study routine for one week.</p>
-                    <p>
+
+                    <p class="goal-target">7 Days</p>
+
+                    <p class="goal-description">
+                        Maintain a regular study routine for one week.
+                    </p>
+
+                    <p class="priority">
                         <strong>Priority:</strong>
                         <span class="priority-high">High</span>
                     </p>
-                </div>
+
+                </article>
 
             </section>
 
+            <!-- Goal Progress -->
             <section class="schedule" aria-labelledby="progress-heading">
 
                 <h2 id="progress-heading">Goal Progress</h2>
 
                 <div class="schedule-item">
+
                     <h3>Daily Study Goal</h3>
+
                     <p>Progress: 2 out of 3 hours completed.</p>
+
                 </div>
 
                 <div class="schedule-item">
+
                     <h3>Weekly Revision</h3>
+
                     <p>Progress: 3 out of 5 topics completed.</p>
+
                 </div>
 
                 <div class="schedule-item">
+
                     <h3>Assignment Target</h3>
+
                     <p>Progress: 1 out of 2 tasks completed.</p>
+
                 </div>
 
             </section>
 
+            <!-- Goals Summary -->
             <section class="schedule" aria-labelledby="summary-heading">
 
                 <h2 id="summary-heading">Goals Summary</h2>
 
                 <div class="schedule-item">
+
                     <h3>Focus on Daily Study</h3>
+
                     <p>
                         Try to complete your three-hour study target every day.
                     </p>
+
                 </div>
 
                 <div class="schedule-item">
+
                     <h3>Complete Weekly Tasks</h3>
+
                     <p>
-                        Keep track of revision topics and assignments throughout the week.
+                        Keep track of revision topics and assignments
+                        throughout the week.
                     </p>
+
                 </div>
 
                 <div class="schedule-item">
+
                     <h3>Build Consistency</h3>
+
                     <p>
-                        Follow a regular study routine and avoid skipping planned sessions.
+                        Follow a regular study routine and avoid skipping
+                        planned sessions.
                     </p>
+
                 </div>
 
             </section>
 
+            <!-- Footer -->
             <footer class="footer">
-                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+
+                <p>
+                    © 2026 Student Productivity Hub |
+                    Plan smarter. Study better.
+                </p>
+
             </footer>
 
         </main>
