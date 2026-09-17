@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | StudyHub - Student Productivity Portal</title>
+    <title>Dashboard | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,224 +12,165 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar Navigation -->
+        <!-- 1. Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <div class="brand-icon">🎓</div>
-                <div class="brand-text">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
                     <h2>StudyHub</h2>
-                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                    <small>STUDENT PORTAL</small>
                 </div>
             </div>
 
-            <nav class="sidebar-nav" aria-label="Main navigation">
-                <a href="index.html" class="nav-link active" aria-current="page">
-                    <span class="nav-icon">📊</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="planner.html" class="nav-link">
-                    <span class="nav-icon">📅</span>
-                    <span>Study Planner</span>
-                </a>
-                <a href="resources.html" class="nav-link">
-                    <span class="nav-icon">📚</span>
-                    <span>Resources</span>
-                </a>
-                <a href="tips.html" class="nav-link">
-                    <span class="nav-icon">💡</span>
-                    <span>Study Tips</span>
-                </a>
-                <a href="goals.html" class="nav-link">
-                    <span class="nav-icon">🎯</span>
-                    <span>Goals</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-icon">✉️</span>
-                    <span>Contact</span>
-                </a>
+            <nav>
+                <a href="index.html" class="nav-link active">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="tips.html" class="nav-link">💡 Study Tips</a>
+                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="contact.html" class="nav-link">✉️ Contact</a>
             </nav>
 
-            <div class="sidebar-footer">
-                <div class="student-profile">
-                    <div class="student-avatar">HJ</div>
-                    <div class="student-info">
-                        <div class="student-name">Himank</div>
-                        <div class="student-role">B.Tech CSE • Sem 4</div>
-                    </div>
+            <div class="profile">
+                <div class="avatar">HJ</div>
+                <div class="profile-info">
+                    <strong>Himank</strong>
+                    <small>B.Tech CSE • Sem 4</small>
                 </div>
-                <div class="project-note">HTML/CSS College Project 2026</div>
             </div>
+
+            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="main-content">
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
 
-            <!-- Top Header -->
-            <header class="top-header">
-                <div class="header-title-group">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
                     <h1>Dashboard</h1>
-                    <p>Welcome back, Himank! Track your study routine and academic milestones.</p>
+                    <p>Welcome back, Himank! Track your study routine and academic targets.</p>
                 </div>
 
-                <div class="header-actions">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Search topics, notes..." readonly aria-label="Search topics">
-                    </div>
-                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
-                        <span>🔔</span>
-                        <span class="notification-dot"></span>
-                    </div>
+                <div class="header-tools">
+                    <span class="search-box">🔍 Search topics...</span>
+                    <span class="bell-btn">🔔</span>
                 </div>
             </header>
 
             <!-- Purple Welcome Banner -->
-            <section class="welcome-banner" aria-labelledby="welcome-heading">
-                <div class="banner-content">
-                    <h2 id="welcome-heading">Ready to ace your finals?</h2>
-                    <p>
-                        You have completed 75% of your planned revision targets this week.
-                        Stay consistent, check your daily schedule, and keep the momentum going!
-                    </p>
+            <section class="banner">
+                <div>
+                    <h2>Ready to ace your finals?</h2>
+                    <p>You have completed 75% of your planned revision targets this week. Keep up the momentum!</p>
                 </div>
-                <div class="banner-badge">
-                    <span>🎯 Finals in 18 Days</span>
-                </div>
+                <span class="banner-badge">🎯 Finals in 18 Days</span>
             </section>
 
             <!-- Three Statistics Cards -->
-            <section class="stats-grid-3" aria-label="Study statistics">
-
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper stat-icon-purple">⏱️</div>
-                    <div class="stat-meta">
+            <section class="grid-3">
+                <div class="card stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div>
+                        <div class="stat-number">28.5 hrs</div>
                         <div class="stat-label">Hours Studied</div>
-                        <div class="stat-value">28.5 hrs</div>
-                        <div class="stat-footnote">↑ 3.5 hrs from last week</div>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper stat-icon-blue">✅</div>
-                    <div class="stat-meta">
+                <div class="card stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div>
+                        <div class="stat-number">18 / 24</div>
                         <div class="stat-label">Tasks Completed</div>
-                        <div class="stat-value">18 / 24</div>
-                        <div class="stat-footnote">75% weekly completion</div>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper stat-icon-green">📑</div>
-                    <div class="stat-meta">
+                <div class="card stat-card">
+                    <div class="stat-icon">📑</div>
+                    <div>
+                        <div class="stat-number">16 Files</div>
                         <div class="stat-label">Resources Saved</div>
-                        <div class="stat-value">16 Files</div>
-                        <div class="stat-footnote">Across 4 core subjects</div>
                     </div>
                 </div>
-
             </section>
 
-            <!-- Quick Actions Section -->
-            <section class="card" aria-labelledby="quick-actions-heading">
-                <div class="card-header">
-                    <div>
-                        <h2 class="card-title" id="quick-actions-heading">Quick Actions</h2>
-                        <span class="card-subtitle">Fast shortcuts to your study tools and schedules</span>
-                    </div>
+            <!-- Quick Actions -->
+            <section>
+                <div style="margin-bottom: 14px;">
+                    <h2 class="card-title">Quick Actions</h2>
+                    <span class="card-subtitle" style="margin-bottom: 0;">Fast shortcuts to your study tools</span>
                 </div>
 
-                <div class="action-grid-4">
-                    <a href="planner.html" class="action-card">
-                        <span class="action-icon">📅</span>
-                        <h3>Check Study Planner</h3>
-                        <p>View timetable and schedule today's revision sessions.</p>
+                <div class="grid-4">
+                    <a href="planner.html" class="card" style="text-decoration: none; color: inherit; display: block;">
+                        <strong>📅 Study Planner</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Organize daily sessions</p>
                     </a>
 
-                    <a href="resources.html" class="action-card">
-                        <span class="action-icon">📚</span>
-                        <h3>Browse Resources</h3>
-                        <p>Access subject lecture notes, lab manuals, and sheets.</p>
+                    <a href="resources.html" class="card" style="text-decoration: none; color: inherit; display: block;">
+                        <strong>📚 Resources</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Subject notes & files</p>
                     </a>
 
-                    <a href="tips.html" class="action-card">
-                        <span class="action-icon">💡</span>
-                        <h3>Review Study Tips</h3>
-                        <p>Master Active Recall and the Pomodoro routine.</p>
+                    <a href="tips.html" class="card" style="text-decoration: none; color: inherit; display: block;">
+                        <strong>💡 Study Tips</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Active Recall & habits</p>
                     </a>
 
-                    <a href="goals.html" class="action-card">
-                        <span class="action-icon">🎯</span>
-                        <h3>Update Study Goals</h3>
-                        <p>Track semester milestones and check target completion.</p>
+                    <a href="goals.html" class="card" style="text-decoration: none; color: inherit; display: block;">
+                        <strong>🎯 Study Goals</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Check targets & progress</p>
                     </a>
                 </div>
             </section>
 
-            <!-- Today's Schedule Section -->
-            <section class="card" aria-labelledby="schedule-heading">
-                <div class="card-header">
+            <!-- Today's Schedule -->
+            <section class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                     <div>
-                        <h2 class="card-title" id="schedule-heading">Today's Schedule</h2>
-                        <span class="card-subtitle">Planned study blocks and academic tasks</span>
+                        <h2 class="card-title">Today's Schedule</h2>
+                        <span class="card-subtitle" style="margin-bottom: 0;">Scheduled study sessions for today</span>
                     </div>
                     <span class="badge badge-purple">4 SESSIONS</span>
                 </div>
 
-                <div class="schedule-list">
-                    <div class="schedule-row">
-                        <div class="schedule-time-slot">
-                            <span class="schedule-time">09:00 AM - 10:30 AM</span>
-                            <span class="schedule-status-text">Completed</span>
-                        </div>
-                        <div class="schedule-details">
-                            <h3>Digital Logic Design</h3>
-                            <p>Boolean algebra minimization using Karnaugh maps and SOP forms.</p>
-                        </div>
-                        <span class="badge badge-purple">LIVE STUDY</span>
+                <article class="item-row">
+                    <div>
+                        <strong>Digital Logic Design (09:00 AM - 10:30 AM)</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Boolean algebra simplification using Karnaugh maps.</p>
                     </div>
+                    <span class="badge badge-purple">LIVE STUDY</span>
+                </article>
 
-                    <div class="schedule-row">
-                        <div class="schedule-time-slot">
-                            <span class="schedule-time">11:30 AM - 01:00 PM</span>
-                            <span class="schedule-status-text">In Progress</span>
-                        </div>
-                        <div class="schedule-details">
-                            <h3>Web Programming</h3>
-                            <p>Hands-on lab on CSS Flexbox, Grid layouts, and responsive design.</p>
-                        </div>
-                        <span class="badge badge-amber">PROJECT WORK</span>
+                <article class="item-row">
+                    <div>
+                        <strong>Web Programming (11:30 AM - 01:00 PM)</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Hands-on practice on CSS Grid, Flexbox, and responsive design.</p>
                     </div>
+                    <span class="badge badge-amber">PROJECT WORK</span>
+                </article>
 
-                    <div class="schedule-row">
-                        <div class="schedule-time-slot">
-                            <span class="schedule-time">03:00 PM - 04:30 PM</span>
-                            <span class="schedule-status-text">Upcoming</span>
-                        </div>
-                        <div class="schedule-details">
-                            <h3>Data Structures</h3>
-                            <p>Binary Search Tree insertion, deletion, and in-order traversal implementation.</p>
-                        </div>
-                        <span class="badge badge-green">SELF REVIEW</span>
+                <article class="item-row">
+                    <div>
+                        <strong>Data Structures (03:00 PM - 04:30 PM)</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Binary Search Tree operations and recursive traversals.</p>
                     </div>
+                    <span class="badge badge-green">SELF REVIEW</span>
+                </article>
 
-                    <div class="schedule-row">
-                        <div class="schedule-time-slot">
-                            <span class="schedule-time">05:30 PM - 06:30 PM</span>
-                            <span class="schedule-status-text">Upcoming</span>
-                        </div>
-                        <div class="schedule-details">
-                            <h3>Linear Algebra</h3>
-                            <p>Eigenvalues, eigenvectors, and matrix diagonalisation practice.</p>
-                        </div>
-                        <span class="badge badge-green">SELF REVIEW</span>
+                <article class="item-row">
+                    <div>
+                        <strong>Linear Algebra (05:30 PM - 06:30 PM)</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 2px;">Eigenvalues and eigenvectors examination practice.</p>
                     </div>
-                </div>
+                    <span class="badge badge-green">SELF REVIEW</span>
+                </article>
             </section>
 
             <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
-                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
             </footer>
 
         </main>
