@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tips - Student Productivity Hub</title>
+    <title>Study Tips | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,11 +17,11 @@
 
             <h2>StudyHub</h2>
 
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="index.html">Dashboard</a>
                 <a href="planner.html">Study Planner</a>
                 <a href="resources.html">Resources</a>
-                <a href="tips.html">Study Tips</a>
+                <a href="tips.html" aria-current="page">Study Tips</a>
                 <a href="goals.html">Goals</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -29,7 +29,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
 
             <header class="header">
                 <h1>Study Tips</h1>
@@ -37,49 +37,61 @@
             </header>
 
             <!-- Tips Introduction -->
-            <section class="welcome">
-                <h2>Improve Your Study Routine</h2>
-                <p>Follow these simple tips to make your study sessions more effective.</p>
+            <section class="welcome" aria-labelledby="tips-heading">
+                <h2 id="tips-heading">Improve Your Study Routine</h2>
+                <p>
+                    Follow these simple tips to make your study sessions more effective.
+                </p>
             </section>
 
             <!-- Study Tips -->
-            <section class="schedule">
+            <section class="schedule" aria-labelledby="useful-tips-heading">
 
-                <h2>Useful Study Tips</h2>
+                <h2 id="useful-tips-heading">Useful Study Tips</h2>
 
                 <div class="schedule-item">
                     <h3>1. Create a Timetable</h3>
-                    <p>Prepare a daily timetable and divide time between different subjects.</p>
+                    <p>
+                        Prepare a daily timetable and divide time between different subjects.
+                    </p>
                 </div>
 
                 <div class="schedule-item">
                     <h3>2. Avoid Distractions</h3>
-                    <p>Keep your phone away and study in a quiet environment.</p>
+                    <p>
+                        Keep your phone away and study in a quiet environment.
+                    </p>
                 </div>
 
                 <div class="schedule-item">
                     <h3>3. Take Short Breaks</h3>
-                    <p>Take small breaks between study sessions to refresh your mind.</p>
+                    <p>
+                        Take small breaks between study sessions to refresh your mind.
+                    </p>
                 </div>
 
                 <div class="schedule-item">
                     <h3>4. Revise Regularly</h3>
-                    <p>Revise important topics regularly to remember them for a longer time.</p>
+                    <p>
+                        Revise important topics regularly to remember them for a longer time.
+                    </p>
                 </div>
 
                 <div class="schedule-item">
                     <h3>5. Set Small Goals</h3>
-                    <p>Complete small targets every day instead of studying everything at once.</p>
+                    <p>
+                        Complete small targets every day instead of studying everything at once.
+                    </p>
                 </div>
 
             </section>
 
-        </main>
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+            </footer>
 
-        <!-- Footer -->
-<footer class="footer">
-    <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
-</footer>
+        </main>
 
     </div>
 
