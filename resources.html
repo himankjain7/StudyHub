@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources - Student Productivity Hub</title>
+    <title>Resources | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,10 +17,10 @@
 
             <h2>StudyHub</h2>
 
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="index.html">Dashboard</a>
                 <a href="planner.html">Study Planner</a>
-                <a href="resources.html">Resources</a>
+                <a href="resources.html" aria-current="page">Resources</a>
                 <a href="tips.html">Study Tips</a>
                 <a href="goals.html">Goals</a>
                 <a href="contact.html">Contact</a>
@@ -29,7 +29,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
 
             <header class="header">
                 <h1>Subject Resources</h1>
@@ -37,13 +37,15 @@
             </header>
 
             <!-- Resources Introduction -->
-            <section class="welcome">
-                <h2>Learning Materials</h2>
-                <p>Use these resources to improve your understanding and revision.</p>
+            <section class="welcome" aria-labelledby="resources-heading">
+                <h2 id="resources-heading">Learning Materials</h2>
+                <p>
+                    Use these resources to improve your understanding and revision.
+                </p>
             </section>
 
             <!-- Resource Cards -->
-            <section class="stats">
+            <section class="stats" aria-label="Subject resources">
 
                 <div class="card">
                     <h3>Digital Logic Design</h3>
@@ -71,12 +73,12 @@
 
             </section>
 
-        </main>
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+            </footer>
 
-        <!-- Footer -->
-<footer class="footer">
-    <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
-</footer>
+        </main>
 
     </div>
 
