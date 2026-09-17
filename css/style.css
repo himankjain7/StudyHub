@@ -174,17 +174,27 @@ body {
 }
 
 .schedule-item {
-    padding: 15px 0;
-    border-bottom: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid #4f46e5;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .schedule-item:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .schedule-item h3 {
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #1e293b;
 }
 
@@ -192,8 +202,8 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     color: #64748b;
+    line-height: 1.6;
 }
-
 /* ==============================
    Contact Form
 ============================== */
