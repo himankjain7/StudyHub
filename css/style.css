@@ -482,3 +482,19 @@ form button:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* Goal Priority Colors */
+.priority-high {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: #d97706;
+    font-weight: bold;
+}
+
+.priority-low {
+    color: #16a34a;
+    font-weight: bold;
+}
