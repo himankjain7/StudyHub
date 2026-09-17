@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goals - Student Productivity Hub</title>
+    <title>Goals | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,38 +12,36 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar -->
         <aside class="sidebar">
 
             <h2>StudyHub</h2>
 
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="index.html">Dashboard</a>
                 <a href="planner.html">Study Planner</a>
                 <a href="resources.html">Resources</a>
                 <a href="tips.html">Study Tips</a>
-                <a href="goals.html">Goals</a>
+                <a href="goals.html" aria-current="page">Goals</a>
                 <a href="contact.html">Contact</a>
             </nav>
 
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
 
             <header class="header">
                 <h1>My Goals</h1>
                 <p>Set targets and track your progress.</p>
             </header>
 
-            <!-- Goals Introduction -->
-            <section class="welcome">
-                <h2>Stay Focused on Your Goals</h2>
-                <p>Small achievements every day can lead to big results.</p>
+            <section class="welcome" aria-labelledby="goals-heading">
+                <h2 id="goals-heading">Stay Focused on Your Goals</h2>
+                <p>
+                    Small achievements every day can lead to big results.
+                </p>
             </section>
 
-            <!-- Goal Cards -->
-            <section class="stats">
+            <section class="stats" aria-label="Study goals">
 
                 <div class="card">
                     <h3>Daily Study Goal</h3>
@@ -71,12 +69,11 @@
 
             </section>
 
-        </main>
+            <footer class="footer">
+                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+            </footer>
 
-        <!-- Footer -->
-<footer class="footer">
-    <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
-</footer>
+        </main>
 
     </div>
 
