@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | StudyHub - Student Productivity Portal</title>
+    <title>Contact | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,234 +12,165 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar Navigation -->
+        <!-- 1. Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <div class="brand-icon">🎓</div>
-                <div class="brand-text">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
                     <h2>StudyHub</h2>
-                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                    <small>STUDENT PORTAL</small>
                 </div>
             </div>
 
-            <nav class="sidebar-nav" aria-label="Main navigation">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-icon">📊</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="planner.html" class="nav-link">
-                    <span class="nav-icon">📅</span>
-                    <span>Study Planner</span>
-                </a>
-                <a href="resources.html" class="nav-link">
-                    <span class="nav-icon">📚</span>
-                    <span>Resources</span>
-                </a>
-                <a href="tips.html" class="nav-link">
-                    <span class="nav-icon">💡</span>
-                    <span>Study Tips</span>
-                </a>
-                <a href="goals.html" class="nav-link">
-                    <span class="nav-icon">🎯</span>
-                    <span>Goals</span>
-                </a>
-                <a href="contact.html" class="nav-link active" aria-current="page">
-                    <span class="nav-icon">✉️</span>
-                    <span>Contact</span>
-                </a>
+            <nav>
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="tips.html" class="nav-link">💡 Study Tips</a>
+                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="contact.html" class="nav-link active">✉️ Contact</a>
             </nav>
 
-            <div class="sidebar-footer">
-                <div class="student-profile">
-                    <div class="student-avatar">HJ</div>
-                    <div class="student-info">
-                        <div class="student-name">Himank</div>
-                        <div class="student-role">B.Tech CSE • Sem 4</div>
-                    </div>
+            <div class="profile">
+                <div class="avatar">HJ</div>
+                <div class="profile-info">
+                    <strong>Himank</strong>
+                    <small>B.Tech CSE • Sem 4</small>
                 </div>
-                <div class="project-note">HTML/CSS College Project 2026</div>
             </div>
+
+            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="main-content">
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
 
-            <!-- Top Header -->
-            <header class="top-header">
-                <div class="header-title-group">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
                     <h1>Contact & Support</h1>
-                    <p>Have questions about StudyHub, suggestions for resources, or feedback on study tools?</p>
+                    <p>Have questions about StudyHub, suggestions for notes, or feedback on study tools?</p>
                 </div>
 
-                <div class="header-actions">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Search support topics..." readonly aria-label="Search support">
-                    </div>
-                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
-                        <span>🔔</span>
-                        <span class="notification-dot"></span>
-                    </div>
+                <div class="header-tools">
+                    <span class="search-box">🔍 Search support...</span>
+                    <span class="bell-btn">🔔</span>
                 </div>
             </header>
 
-            <!-- Two-Column Layout: Get In Touch + Leave a Message -->
-            <div class="contact-grid">
+            <!-- Two-Column Contact Layout -->
+            <div class="grid-2">
 
                 <!-- Left Card: Get In Touch -->
-                <section class="card" aria-labelledby="get-in-touch-heading">
-                    <div class="card-header">
-                        <div>
-                            <h2 class="card-title" id="get-in-touch-heading">Get In Touch</h2>
-                            <span class="card-subtitle">Direct communication channels & campus desk</span>
+                <section class="card">
+                    <h2 class="card-title">Get In Touch</h2>
+                    <span class="card-subtitle">Direct communication channels & campus desk</span>
+
+                    <div class="item-row">
+                        <span>✉️</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Official Email</strong>
+                            <p style="font-size: 13px; color: var(--muted);">himank@studyhub.edu</p>
                         </div>
                     </div>
 
-                    <div class="contact-info-list">
-
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">✉️</div>
-                            <div class="contact-info-details">
-                                <h4>Official Email</h4>
-                                <p>himank@studyhub.edu</p>
-                            </div>
+                    <div class="item-row">
+                        <span>📍</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Campus Location</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Academic Block B, Room 304, CSE Lab</p>
                         </div>
+                    </div>
 
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">📍</div>
-                            <div class="contact-info-details">
-                                <h4>Campus Location</h4>
-                                <p>Academic Block B, Room 304, CSE Lab</p>
-                            </div>
+                    <div class="item-row">
+                        <span>📞</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Support Helpline</strong>
+                            <p style="font-size: 13px; color: var(--muted);">+1 (555) 234-5678 (Ext. 402)</p>
                         </div>
+                    </div>
 
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">📞</div>
-                            <div class="contact-info-details">
-                                <h4>Support Helpline</h4>
-                                <p>+1 (555) 234-5678 (Ext. 402)</p>
-                            </div>
+                    <div class="item-row">
+                        <span>🕒</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Working Hours</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Monday - Friday: 09:00 AM - 05:30 PM</p>
                         </div>
+                    </div>
 
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">🕒</div>
-                            <div class="contact-info-details">
-                                <h4>Working Hours</h4>
-                                <p>Monday - Friday: 09:00 AM - 05:30 PM (IST)</p>
-                            </div>
+                    <div class="item-row">
+                        <span>⚡</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Response Time</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Typically within 24 to 48 working hours</p>
                         </div>
-
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">⚡</div>
-                            <div class="contact-info-details">
-                                <h4>Response Time</h4>
-                                <p>Typically within 24 to 48 working hours</p>
-                            </div>
-                        </div>
-
                     </div>
                 </section>
 
                 <!-- Right Card: Leave a Message Form -->
-                <section class="card" aria-labelledby="leave-message-heading">
-                    <div class="card-header">
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                         <div>
-                            <h2 class="card-title" id="leave-message-heading">Leave a Message</h2>
-                            <span class="card-subtitle">Fill out the form below to send your query</span>
+                            <h2 class="card-title">Leave a Message</h2>
+                            <span class="card-subtitle" style="margin-bottom: 0;">Fill out the form below to send your query</span>
                         </div>
                         <span class="badge badge-purple">FEEDBACK</span>
                     </div>
 
-                    <form class="contact-form" action="#" method="post">
-
+                    <form action="#" method="post">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                class="form-input"
-                                placeholder="e.g. Himank Jain"
-                                required
-                            >
+                            <input type="text" id="name" name="name" placeholder="e.g. Himank Jain" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">College Email Address</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-input"
-                                placeholder="e.g. himank@student.edu"
-                                required
-                            >
+                            <input type="email" id="email" name="email" placeholder="e.g. himank@student.edu" required>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Subject / Inquiry Type</label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                class="form-input"
-                                placeholder="e.g. Study Resources or Schedule Query"
-                                required
-                            >
+                            <input type="text" id="subject" name="subject" placeholder="e.g. Study Resources Query" required>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                class="form-textarea"
-                                rows="5"
-                                placeholder="Write your question, suggestion, or study feedback here..."
-                                required
-                            ></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Write your question or feedback here..." required></textarea>
                         </div>
 
-                        <div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </div>
-
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </section>
 
             </div>
 
             <!-- Frequently Asked Questions -->
-            <section class="card" aria-labelledby="faq-heading">
-                <div class="card-header">
-                    <div>
-                        <h2 class="card-title" id="faq-heading">Frequently Asked Questions</h2>
-                        <span class="card-subtitle">Quick answers regarding portal usage</span>
-                    </div>
-                </div>
+            <section class="card">
+                <h2 class="card-title">Frequently Asked Questions</h2>
+                <span class="card-subtitle">Quick answers regarding portal usage</span>
 
-                <div class="info-row-grid">
-                    <div class="info-box">
-                        <h4>How can I submit new study notes?</h4>
-                        <p>Send your PDF documents and lecture summaries to himank@studyhub.edu for faculty review.</p>
+                <div class="grid-3">
+                    <div class="item-row" style="display: block;">
+                        <strong>How can I submit new notes?</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Email your PDF materials to himank@studyhub.edu for faculty review.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h4>Is StudyHub completely offline-friendly?</h4>
-                        <p>Yes! StudyHub is built purely with HTML and CSS, requiring no external frameworks or databases.</p>
+                    <div class="item-row" style="display: block;">
+                        <strong>Is StudyHub offline-friendly?</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Yes! It runs on pure static HTML and CSS without any server dependencies.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h4>Can I customize my daily routine?</h4>
-                        <p>Yes, all timetable blocks in the Study Planner can be adapted to match your individual syllabus.</p>
+                    <div class="item-row" style="display: block;">
+                        <strong>Can I edit my timetable?</strong>
+                        <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Yes, all study sessions can be updated directly in the planner HTML.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
-                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
             </footer>
 
         </main>
