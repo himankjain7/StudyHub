@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tips | StudyHub</title>
+    <title>Study Tips | StudyHub - Student Productivity Portal</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,161 +12,214 @@
 
     <div class="dashboard">
 
-        <!-- Sidebar -->
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">🎓</div>
+                <div class="brand-text">
+                    <h2>StudyHub</h2>
+                    <span class="sidebar-subtitle">STUDENT PORTAL</span>
+                </div>
+            </div>
 
-            <h2>StudyHub</h2>
-
-            <nav aria-label="Main navigation">
-                <a href="index.html">Dashboard</a>
-                <a href="planner.html">Study Planner</a>
-                <a href="resources.html">Resources</a>
-                <a href="tips.html" aria-current="page">Study Tips</a>
-                <a href="goals.html">Goals</a>
-                <a href="contact.html">Contact</a>
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="planner.html" class="nav-link">
+                    <span class="nav-icon">📅</span>
+                    <span>Study Planner</span>
+                </a>
+                <a href="resources.html" class="nav-link">
+                    <span class="nav-icon">📚</span>
+                    <span>Resources</span>
+                </a>
+                <a href="tips.html" class="nav-link active" aria-current="page">
+                    <span class="nav-icon">💡</span>
+                    <span>Study Tips</span>
+                </a>
+                <a href="goals.html" class="nav-link">
+                    <span class="nav-icon">🎯</span>
+                    <span>Goals</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <span class="nav-icon">✉️</span>
+                    <span>Contact</span>
+                </a>
             </nav>
 
+            <div class="sidebar-footer">
+                <div class="student-profile">
+                    <div class="student-avatar">HJ</div>
+                    <div class="student-info">
+                        <div class="student-name">Himank</div>
+                        <div class="student-role">B.Tech CSE • Sem 4</div>
+                    </div>
+                </div>
+                <div class="project-note">HTML/CSS College Project 2026</div>
+            </div>
         </aside>
 
-        <!-- Main Content -->
+        <!-- Main Content Area -->
         <main class="main-content" id="main-content">
 
-            <header class="header">
-                <h1>Study Tips</h1>
-                <p>Simple habits for better learning.</p>
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-title-group">
+                    <h1>Study Tips & Techniques</h1>
+                    <p>Evidence-based learning strategies, mental frameworks, and daily productivity routines.</p>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search study tips..." readonly aria-label="Search tips">
+                    </div>
+                    <div class="notification-btn" title="No unread notifications" aria-label="Notifications">
+                        <span>🔔</span>
+                        <span class="notification-dot"></span>
+                    </div>
+                </div>
             </header>
 
-            <!-- Tips Introduction -->
-            <section class="welcome" aria-labelledby="tips-heading">
-                <h2 id="tips-heading">Improve Your Study Routine</h2>
-                <p>
-                    Follow these simple tips to make your study sessions more effective.
-                </p>
-            </section>
+            <!-- Three Top Strategy Cards -->
+            <section class="tips-grid-3" aria-label="Core study techniques">
 
-            <!-- Study Tips -->
-            <section class="schedule" aria-labelledby="useful-tips-heading">
+                <!-- 1. Active Recall -->
+                <article class="tip-strategy-card">
+                    <div class="tip-card-top">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <div class="tip-icon">🧠</div>
+                            <span class="badge badge-purple">HIGH RETENTION</span>
+                        </div>
+                        <h3>Active Recall</h3>
+                        <p>
+                            Instead of passively re-reading notes, test yourself by closing the book
+                            and retrieving key facts from memory to create stronger neural pathways.
+                        </p>
+                    </div>
+                    <div class="tip-key-advice">
+                        <strong>Action Tip:</strong> Turn lecture headings into practice questions and quiz yourself before each study block.
+                    </div>
+                </article>
 
-                <h2 id="useful-tips-heading">Useful Study Tips</h2>
+                <!-- 2. Pomodoro Method -->
+                <article class="tip-strategy-card">
+                    <div class="tip-card-top">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <div class="tip-icon">⏱️</div>
+                            <span class="badge badge-amber">MAX FOCUS</span>
+                        </div>
+                        <h3>Pomodoro Method</h3>
+                        <p>
+                            Work in strict 25-minute deep focus sprints followed by 5-minute restorative breaks.
+                            This cycle maintains high energy and combats mental fatigue.
+                        </p>
+                    </div>
+                    <div class="tip-key-advice">
+                        <strong>Action Tip:</strong> Complete 4 Pomodoros before taking an extended 25-minute walk or hydration break.
+                    </div>
+                </article>
 
-                <div class="schedule-item">
-                    <h3>1. Create a Timetable</h3>
-                    <p>
-                        Prepare a daily timetable and divide time between different subjects.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>2. Avoid Distractions</h3>
-                    <p>
-                        Keep your phone away and study in a quiet environment.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>3. Take Short Breaks</h3>
-                    <p>
-                        Take small breaks between study sessions to refresh your mind.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>4. Revise Regularly</h3>
-                    <p>
-                        Revise important topics regularly to remember them for a longer time.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>5. Set Small Goals</h3>
-                    <p>
-                        Complete small targets every day instead of studying everything at once.
-                    </p>
-                </div>
-
-            </section>
-
-            <!-- Daily Study Routine -->
-            <section class="schedule" aria-labelledby="routine-heading">
-
-                <h2 id="routine-heading">Daily Study Routine</h2>
-
-                <div class="schedule-item">
-                    <h3>Morning Review</h3>
-                    <p>
-                        Spend a few minutes reviewing important topics or notes
-                        from your previous study session.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>Afternoon Practice</h3>
-                    <p>
-                        Use your study time to solve practice questions and
-                        apply the concepts you have learned.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>Evening Revision</h3>
-                    <p>
-                        Review the topics studied during the day and identify
-                        areas that need more attention.
-                    </p>
-                </div>
-
-                <div class="schedule-item">
-                    <h3>Quick Night Recap</h3>
-                    <p>
-                        Before going to sleep, quickly recall the main concepts
-                        you studied during the day.
-                    </p>
-                </div>
+                <!-- 3. Feynman Technique -->
+                <article class="tip-strategy-card">
+                    <div class="tip-card-top">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <div class="tip-icon">💡</div>
+                            <span class="badge badge-green">DEEP MASTERY</span>
+                        </div>
+                        <h3>Feynman Technique</h3>
+                        <p>
+                            Explain complex engineering concepts in plain, beginner-friendly terms.
+                            Any point where you struggle reveals an immediate gap to revisit in the notes.
+                        </p>
+                    </div>
+                    <div class="tip-key-advice">
+                        <strong>Action Tip:</strong> Write down explanations as if teaching a freshman peer without using technical jargon.
+                    </div>
+                </article>
 
             </section>
 
-            <!-- Study Techniques -->
-            <section class="schedule" aria-labelledby="techniques-heading">
-
-                <h2 id="techniques-heading">Study Techniques</h2>
-
-                <div class="schedule-item">
-                    <h3>Active Recall</h3>
-                    <p>
-                        Test yourself on a topic without looking at your notes
-                        to check how much you can remember.
-                    </p>
+            <!-- Large "Optimal Daily Study Routine" Card -->
+            <section class="card" aria-labelledby="routine-heading">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="routine-heading">Optimal Daily Study Routine</h2>
+                        <span class="card-subtitle">Recommended timeline based on cognitive peak hours</span>
+                    </div>
+                    <span class="badge badge-purple">DAILY SCHEDULE</span>
                 </div>
 
-                <div class="schedule-item">
-                    <h3>Spaced Revision</h3>
-                    <p>
-                        Review important topics at different intervals instead
-                        of trying to learn everything in one session.
-                    </p>
-                </div>
+                <div class="routine-list">
 
-                <div class="schedule-item">
-                    <h3>Practice Testing</h3>
-                    <p>
-                        Solve practice questions and sample problems to
-                        identify areas that need more preparation.
-                    </p>
-                </div>
+                    <div class="routine-row">
+                        <div class="routine-time">07:00 AM - 08:30 AM</div>
+                        <div class="routine-content">
+                            <h4>Morning Prime Time Revision</h4>
+                            <p>Review theoretical topics and complex formulas while your mental clarity is highest and distractions are minimal.</p>
+                        </div>
+                    </div>
 
-                <div class="schedule-item">
-                    <h3>Note Summarization</h3>
-                    <p>
-                        Write short summaries of important concepts using
-                        simple words to make revision easier.
-                    </p>
-                </div>
+                    <div class="routine-row">
+                        <div class="routine-time">10:00 AM - 01:00 PM</div>
+                        <div class="routine-content">
+                            <h4>Core Problem Solving & Coding</h4>
+                            <p>Tackle algorithmic challenges in Data Structures and practice CSS layout construction during peak analytical hours.</p>
+                        </div>
+                    </div>
 
+                    <div class="routine-row">
+                        <div class="routine-time">03:00 PM - 05:00 PM</div>
+                        <div class="routine-content">
+                            <h4>Practical Lab & Applied Exercises</h4>
+                            <p>Dedicate afternoon hours to laboratory manuals, group discussions, and verifying solved numerical problems.</p>
+                        </div>
+                    </div>
+
+                    <div class="routine-row">
+                        <div class="routine-time">07:30 PM - 09:00 PM</div>
+                        <div class="routine-content">
+                            <h4>Spaced Retrieval & Day Recap</h4>
+                            <p>Run quick flashcard quizzes on today's learning, review tomorrow's timetable, and set 3 key priorities in your planner.</p>
+                        </div>
+                    </div>
+
+                </div>
             </section>
 
-            <!-- Footer -->
+            <!-- Essential Study Habits -->
+            <section class="card" aria-labelledby="habits-heading">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="habits-heading">Essential Study Habits</h2>
+                        <span class="card-subtitle">Consistency principles for semester exams</span>
+                    </div>
+                </div>
+
+                <div class="info-row-grid">
+                    <div class="info-box">
+                        <h4>🚫 Eliminate Digital Distractions</h4>
+                        <p>Keep your phone in another room or set it to 'Do Not Disturb' mode during deep work blocks.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🎯 Set Micro Targets</h4>
+                        <p>Focus on completing 2 specific sub-topics per session instead of vague goals like "study math".</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🔄 Spaced Repetition</h4>
+                        <p>Review tricky topics on day 1, day 3, and day 7 to lock information into permanent long-term storage.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Page Footer -->
             <footer class="footer">
-                <p>© 2026 Student Productivity Hub | Plan smarter. Study better.</p>
+                <p>© 2026 StudyHub Student Productivity Portal | Designed for Academic Success</p>
+                <span class="footer-quote">Plan smarter • Study better • Achieve more</span>
             </footer>
 
         </main>
