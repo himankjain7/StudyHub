@@ -508,3 +508,63 @@ form button:hover {
     color: #16a34a;
     font-weight: bold;
 }
+
+/* ==============================
+   Website Polish: Shared Layout
+============================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+}
+
+/* Better sidebar appearance */
+
+.sidebar {
+    box-shadow: 3px 0 12px rgba(15, 23, 42, 0.08);
+}
+
+.sidebar h2 {
+    font-weight: bold;
+}
+
+/* Better navigation spacing */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar nav a {
+    margin-bottom: 0;
+    border-left: 4px solid transparent;
+}
+
+.sidebar nav a[aria-current="page"] {
+    border-left-color: white;
+}
+
+/* Better main content width */
+
+.main-content {
+    max-width: 1400px;
+}
+
+/* Keyboard accessibility */
+
+.sidebar nav a:focus-visible,
+.action-card:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 3px;
+}
+
+/* Better text selection */
+
+::selection {
+    background-color: #bfdbfe;
+    color: #1e3a8a;
+}
