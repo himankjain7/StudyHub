@@ -25,21 +25,11 @@
             <nav>
                 <a href="index.html" class="nav-link">📊 Dashboard</a>
                 <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="add-task.html" class="nav-link">➕ Add Task</a>
                 <a href="resources.html" class="nav-link">📚 Resources</a>
-                <a href="tips.html" class="nav-link">💡 Study Tips</a>
-                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="registration.html" class="nav-link">📝 Registration</a>
                 <a href="contact.html" class="nav-link active">✉️ Contact</a>
             </nav>
-
-            <div class="profile">
-                <div class="avatar">HJ</div>
-                <div class="profile-info">
-                    <strong>Himank</strong>
-                    <small>B.Tech CSE • Sem 4</small>
-                </div>
-            </div>
-
-            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
         <!-- 2. Main Content Area -->
@@ -50,11 +40,6 @@
                 <div>
                     <h1>Contact & Support</h1>
                     <p>Have questions about StudyHub, suggestions for notes, or feedback on study tools?</p>
-                </div>
-
-                <div class="header-tools">
-                    <span class="search-box">🔍 Search support...</span>
-                    <span class="bell-btn">🔔</span>
                 </div>
             </header>
 
@@ -117,7 +102,9 @@
                         <span class="badge badge-purple">FEEDBACK</span>
                     </div>
 
-                    <form action="#" method="post">
+                    <div id="contact-message" class="alert" style="display: none;"></div>
+
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" placeholder="e.g. Himank Jain" required>
@@ -138,7 +125,7 @@
                             <textarea id="message" name="message" rows="4" placeholder="Write your question or feedback here..." required></textarea>
                         </div>
 
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" id="contact-submit-btn" class="btn">Send Message</button>
                     </form>
                 </section>
 
@@ -177,6 +164,8 @@
 
     </div>
 
+    <!-- Forms validation JavaScript -->
+    <script src="js/forms.js"></script>
 </body>
 
 </html>
