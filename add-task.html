@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task | StudyHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- 1. Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
+                    <h2>StudyHub</h2>
+                    <small>STUDENT PORTAL</small>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="add-task.html" class="nav-link active">➕ Add Task</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="registration.html" class="nav-link">📝 Registration</a>
+                <a href="contact.html" class="nav-link">✉️ Contact</a>
+            </nav>
+        </aside>
+
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
+                    <h1>Add New Task</h1>
+                    <p>Schedule an upcoming academic assignment, lab report, or revision session.</p>
+                </div>
+
+                <div class="header-tools">
+                    <a href="planner.html" class="btn">📅 Back to Planner</a>
+                </div>
+            </header>
+
+            <!-- Two-Column Layout: Form + Guidelines -->
+            <div class="grid-2">
+
+                <!-- Left Card: Add Task Form -->
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div>
+                            <h2 class="card-title">Task Details</h2>
+                            <span class="card-subtitle" style="margin-bottom: 0;">Fill in the information below</span>
+                        </div>
+                        <span class="badge badge-purple">NEW TASK</span>
+                    </div>
+
+                    <!-- Success or Error Feedback Box -->
+                    <div id="form-message" class="alert" style="display: none;"></div>
+
+                    <form id="add-task-form">
+                        <div class="form-group">
+                            <label for="task-title">Task Title *</label>
+                            <input type="text" id="task-title" name="title" placeholder="e.g. Complete DLD Chapter 3 K-Maps" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task-subject">Subject *</label>
+                            <input type="text" id="task-subject" name="subject" placeholder="e.g. Digital Logic Design" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task-due-date">Due Date *</label>
+                            <input type="date" id="task-due-date" name="dueDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task-priority">Priority Level *</label>
+                            <select id="task-priority" name="priority" required>
+                                <option value="">-- Select Priority --</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button type="submit" id="task-submit-btn" class="btn">Add Task</button>
+                            <a href="planner.html" class="btn" style="background-color: var(--border); color: var(--text);">Cancel</a>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Right Card: Scheduling Guidelines -->
+                <section class="card">
+                    <h2 class="card-title">Study Scheduling Tips</h2>
+                    <span class="card-subtitle">Best practices for managing semester workload</span>
+
+                    <div class="item-row">
+                        <span>🎯</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Specific Titles</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Write actionable task names like "Solve 5 K-Map exercises" rather than "Study DLD".</p>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <span>📅</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Realistic Deadlines</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Set due dates at least one day before final college submission.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <span>⚡</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Priority Tags</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Mark practical lab records and major test topics as High Priority.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <span>💾</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Persistent Storage</strong>
+                            <p style="font-size: 13px; color: var(--muted);">All tasks submitted here are saved to the server and preserved in data.json.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Page Footer -->
+            <footer class="footer">
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Task Management JavaScript -->
+    <script src="js/tasks.js"></script>
+</body>
+
+</html>
