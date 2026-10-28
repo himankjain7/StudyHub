@@ -25,21 +25,11 @@
             <nav>
                 <a href="index.html" class="nav-link">📊 Dashboard</a>
                 <a href="planner.html" class="nav-link active">📅 Study Planner</a>
+                <a href="add-task.html" class="nav-link">➕ Add Task</a>
                 <a href="resources.html" class="nav-link">📚 Resources</a>
-                <a href="tips.html" class="nav-link">💡 Study Tips</a>
-                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="registration.html" class="nav-link">📝 Registration</a>
                 <a href="contact.html" class="nav-link">✉️ Contact</a>
             </nav>
-
-            <div class="profile">
-                <div class="avatar">HJ</div>
-                <div class="profile-info">
-                    <strong>Himank</strong>
-                    <small>B.Tech CSE • Sem 4</small>
-                </div>
-            </div>
-
-            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
         <!-- 2. Main Content Area -->
@@ -49,112 +39,34 @@
             <header class="page-header">
                 <div>
                     <h1>Study Planner</h1>
-                    <p>Plan your study sessions, track tasks, and check weekly targets.</p>
+                    <p>Track your assignments, monitor deadlines, and mark completed study sessions.</p>
                 </div>
 
                 <div class="header-tools">
-                    <span class="search-box">🔍 Search sessions...</span>
-                    <span class="bell-btn">🔔</span>
+                    <a href="add-task.html" class="btn">➕ Add New Task</a>
                 </div>
             </header>
 
-            <!-- Two-Column Planner: Daily Plan + Weekly Checklist -->
-            <div class="grid-2">
+            <!-- Error message if backend fails -->
+            <div id="task-error-message" class="alert alert-error" style="display: none;"></div>
 
-                <!-- Left Card: Daily Study Plan -->
-                <section class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <div>
-                            <h2 class="card-title">Daily Study Plan</h2>
-                            <span class="card-subtitle" style="margin-bottom: 0;">Scheduled blocks for Thursday</span>
-                        </div>
-                        <span class="badge badge-purple">4 SESSIONS</span>
-                    </div>
+            <!-- All Saved Tasks (Dynamic from js/tasks.js) -->
+            <section class="card">
+                <div style="margin-bottom: 16px;">
+                    <h2 class="card-title">All Study Tasks</h2>
+                    <span class="card-subtitle" style="margin-bottom: 0;">Loaded from backend data store</span>
+                </div>
 
-                    <article class="item-row">
-                        <div>
-                            <strong>Morning Deep Work <span class="badge badge-purple">Digital Logic</span></strong>
-                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Karnaugh Map minimization exercises.</p>
-                            <small style="color: var(--primary); font-weight: bold;">09:00 AM - 10:30 AM</small>
-                        </div>
-                        <span class="badge badge-green">COMPLETED</span>
-                    </article>
+                <!-- Helpful message when there are no tasks -->
+                <div id="no-tasks-message" class="empty-state" style="display: none;">
+                    No tasks found. Click "➕ Add New Task" to create your first task!
+                </div>
 
-                    <article class="item-row">
-                        <div>
-                            <strong>Frontend Practice <span class="badge badge-purple">Web Programming</span></strong>
-                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Build responsive card components using CSS.</p>
-                            <small style="color: var(--primary); font-weight: bold;">11:30 AM - 01:00 PM</small>
-                        </div>
-                        <span class="badge badge-amber">IN PROGRESS</span>
-                    </article>
-
-                    <article class="item-row">
-                        <div>
-                            <strong>Algorithms Lab <span class="badge badge-purple">Data Structures</span></strong>
-                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Binary Search Tree operations in C++.</p>
-                            <small style="color: var(--primary); font-weight: bold;">02:30 PM - 04:00 PM</small>
-                        </div>
-                        <span class="badge badge-purple">UPCOMING</span>
-                    </article>
-
-                    <article class="item-row">
-                        <div>
-                            <strong>Evening Revision <span class="badge badge-purple">Linear Algebra</span></strong>
-                            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">Calculate eigenvalues and eigenvectors.</p>
-                            <small style="color: var(--primary); font-weight: bold;">05:30 PM - 07:00 PM</small>
-                        </div>
-                        <span class="badge badge-purple">UPCOMING</span>
-                    </article>
-                </section>
-
-                <!-- Right Card: Weekly Checklist -->
-                <section class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <div>
-                            <h2 class="card-title">Weekly Checklist</h2>
-                            <span class="card-subtitle" style="margin-bottom: 0;">5 of 7 tasks finished</span>
-                        </div>
-                        <span class="badge badge-purple">71% DONE</span>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon done">✓</span>
-                        <div class="check-done">Complete DLD Chapter 3 K-Maps</div>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon done">✓</span>
-                        <div class="check-done">Submit Web Programming Lab 2</div>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon done">✓</span>
-                        <div class="check-done">Implement Binary Tree in C++</div>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon done">✓</span>
-                        <div class="check-done">Solve 5 Linear Algebra questions</div>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon done">✓</span>
-                        <div class="check-done">Review Active Recall flashcards</div>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon pending"></span>
-                        <div>Practice 10 Stack & Queue viva Qs</div>
-                    </div>
-
-                    <div class="check-row">
-                        <span class="check-icon pending"></span>
-                        <div>Take mock test on Eigenvalues</div>
-                    </div>
-                </section>
-
-            </div>
+                <!-- Dynamic tasks container -->
+                <div id="tasks-list">
+                    <!-- Populated dynamically via js/tasks.js -->
+                </div>
+            </section>
 
             <!-- Page Footer -->
             <footer class="footer">
@@ -166,6 +78,8 @@
 
     </div>
 
+    <!-- Task Management JavaScript -->
+    <script src="js/tasks.js"></script>
 </body>
 
 </html>
