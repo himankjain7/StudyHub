@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | StudyHub</title>
+    <title>Subject Resources | StudyHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -25,44 +25,108 @@
             <nav>
                 <a href="index.html" class="nav-link">📊 Dashboard</a>
                 <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="add-task.html" class="nav-link">➕ Add Task</a>
                 <a href="resources.html" class="nav-link active">📚 Resources</a>
-                <a href="tips.html" class="nav-link">💡 Study Tips</a>
-                <a href="goals.html" class="nav-link">🎯 Goals</a>
+                <a href="registration.html" class="nav-link">📝 Registration</a>
                 <a href="contact.html" class="nav-link">✉️ Contact</a>
             </nav>
-
-            <div class="profile">
-                <div class="avatar">HJ</div>
-                <div class="profile-info">
-                    <strong>Himank</strong>
-                    <small>B.Tech CSE • Sem 4</small>
-                </div>
-            </div>
-
-            <p class="college-note">HTML/CSS College Project 2026</p>
         </aside>
 
         <!-- 2. Main Content Area -->
         <main class="main-content">
 
-            <!-- Page Header -->
+            <!-- Page Header (Clean, without search bar or bell icons) -->
             <header class="page-header">
                 <div>
                     <h1>Subject Resources</h1>
                     <p>Curated lecture notes, laboratory manuals, reference sheets, and practice links.</p>
                 </div>
-
                 <div class="header-tools">
-                    <span class="search-box">🔍 Search notes...</span>
-                    <span class="bell-btn">🔔</span>
+                    <button type="button" id="open-add-resource-btn" class="btn">➕ Add Resource</button>
                 </div>
             </header>
 
-            <!-- 4 Subject Resource Cards -->
+            <!-- Add Resource Form (Toggled by + Add Resource button) -->
+            <section id="add-resource-section" class="card" style="display: none; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <div>
+                        <h2 class="card-title">Add New Resource</h2>
+                        <span class="card-subtitle" style="margin-bottom: 0;">Add learning materials to any of the 4 subjects</span>
+                    </div>
+                    <span class="badge badge-purple">NEW RESOURCE</span>
+                </div>
+
+                <!-- Form feedback alert -->
+                <div id="resource-message" class="alert" style="display: none;"></div>
+
+                <form id="add-resource-form">
+                    <div class="form-group">
+                        <label for="resource-title">Resource Title *</label>
+                        <input type="text" id="resource-title" name="title" placeholder="e.g. Logic Gates Reference PDF" required>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="resource-subject">Subject *</label>
+                            <select id="resource-subject" name="subject" required>
+                                <option value="">-- Select Subject --</option>
+                                <option value="Digital Logic Design">Digital Logic Design</option>
+                                <option value="Web Programming">Web Programming</option>
+                                <option value="Data Structures">Data Structures</option>
+                                <option value="Linear Algebra">Linear Algebra</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resource-type">Resource Type</label>
+                            <select id="resource-type" name="type">
+                                <option value="Notes">Notes</option>
+                                <option value="PDF">PDF</option>
+                                <option value="Video">Video</option>
+                                <option value="Website" selected>Website</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resource-url">Resource URL</label>
+                        <input type="url" id="resource-url" name="url" placeholder="https://example.com/reference">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resource-desc">Description</label>
+                        <textarea id="resource-desc" name="description" rows="2" placeholder="Brief description or chapter summary..."></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <button type="submit" id="save-resource-btn" class="btn">Save Resource</button>
+                        <button type="button" id="cancel-resource-btn" class="btn" style="background-color: var(--border); color: var(--text);">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Subject Filter Dropdown -->
+            <section class="card" style="margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <label for="subject-filter" style="font-weight: bold; font-size: 14px; color: var(--text);">Filter by Subject:</label>
+                        <select id="subject-filter" style="padding: 8px 14px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background-color: #FFFFFF; color: var(--text); cursor: pointer;">
+                            <option value="all">All Subjects</option>
+                            <option value="Digital Logic Design">Digital Logic Design</option>
+                            <option value="Web Programming">Web Programming</option>
+                            <option value="Data Structures">Data Structures</option>
+                            <option value="Linear Algebra">Linear Algebra</option>
+                        </select>
+                    </div>
+                    <span id="filter-status-text" style="font-size: 13px; color: var(--muted);">Showing all 4 subjects</span>
+                </div>
+            </section>
+
+            <!-- 4 Subject Resource Cards in 2 Columns -->
             <section class="grid-2">
 
-                <!-- 1. Digital Logic Design -->
-                <article class="card subject-card">
+                <!-- Card 1: Digital Logic Design -->
+                <article class="card subject-card" data-subject="Digital Logic Design">
                     <div class="subject-banner blue">
                         <span>Digital Systems (Gates & K-Maps)</span>
                         <span>⚡</span>
@@ -73,16 +137,18 @@
                             <span class="badge badge-blue">CODE: CS201</span>
                         </div>
                         <p style="font-size: 13px; color: var(--muted);">Boolean algebra simplification, flip-flops, counters, and finite state machines.</p>
+                        <button type="button" class="btn btn-sm toggle-resources-btn" style="align-self: flex-start;">Hide Resources</button>
                         <div class="subject-links">
-                            <a href="#">📄 Lecture Notes & Cheatsheet (PDF)</a>
-                            <a href="#">🧪 Digital Logic Lab Manual</a>
-                            <a href="#">💡 Solved Boolean Algebra Problems</a>
+                            <a href="https://www.allaboutcircuits.com/textbook/digital/" target="_blank" rel="noopener noreferrer">📄 Lecture Notes & Cheatsheet ↗</a>
+                            <a href="https://www.electronics-tutorials.ws/logic/logic_1.html" target="_blank" rel="noopener noreferrer">🧪 Digital Logic Lab Manual ↗</a>
+                            <a href="https://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/" target="_blank" rel="noopener noreferrer">💡 Solved Boolean Algebra Problems ↗</a>
+                            <div class="user-resources" data-subject="Digital Logic Design"></div>
                         </div>
                     </div>
                 </article>
 
-                <!-- 2. Web Programming -->
-                <article class="card subject-card">
+                <!-- Card 2: Web Programming -->
+                <article class="card subject-card" data-subject="Web Programming">
                     <div class="subject-banner purple">
                         <span>Frontend Foundations (HTML5 & CSS)</span>
                         <span>🌐</span>
@@ -93,16 +159,18 @@
                             <span class="badge badge-purple">CODE: CS204</span>
                         </div>
                         <p style="font-size: 13px; color: var(--muted);">Semantic HTML5 structure, CSS Flexbox and Grid layouts, and responsive UI standards.</p>
+                        <button type="button" class="btn btn-sm toggle-resources-btn" style="align-self: flex-start;">Hide Resources</button>
                         <div class="subject-links">
-                            <a href="#">📄 HTML5 & CSS3 Quick Reference</a>
-                            <a href="#">💻 Starter Layout Templates</a>
-                            <a href="#">🎯 Responsive Web Design Guide</a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">📄 HTML5 & CSS3 Quick Reference ↗</a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout" target="_blank" rel="noopener noreferrer">💻 Starter Layout Templates ↗</a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">🎯 Responsive Web Design Guide ↗</a>
+                            <div class="user-resources" data-subject="Web Programming"></div>
                         </div>
                     </div>
                 </article>
 
-                <!-- 3. Data Structures -->
-                <article class="card subject-card">
+                <!-- Card 3: Data Structures -->
+                <article class="card subject-card" data-subject="Data Structures">
                     <div class="subject-banner green">
                         <span>Algorithms & Data (Trees & Graphs)</span>
                         <span>🌳</span>
@@ -113,16 +181,18 @@
                             <span class="badge badge-green">CODE: CS202</span>
                         </div>
                         <p style="font-size: 13px; color: var(--muted);">Arrays, linked lists, stacks, queues, binary search trees, and time complexity.</p>
+                        <button type="button" class="btn btn-sm toggle-resources-btn" style="align-self: flex-start;">Hide Resources</button>
                         <div class="subject-links">
-                            <a href="#">📄 Core Data Structures Handout</a>
-                            <a href="#">📊 Algorithm Complexity Chart</a>
-                            <a href="#">📝 Viva & Interview Q&A Repository</a>
+                            <a href="https://www.geeksforgeeks.org/data-structures/" target="_blank" rel="noopener noreferrer">📄 Core Data Structures Handout ↗</a>
+                            <a href="https://www.bigocheatsheet.com/" target="_blank" rel="noopener noreferrer">📊 Algorithm Complexity Chart ↗</a>
+                            <a href="https://www.geeksforgeeks.org/top-50-data-structures-interview-questions-and-answers/" target="_blank" rel="noopener noreferrer">📝 Viva & Interview Q&A Repository ↗</a>
+                            <div class="user-resources" data-subject="Data Structures"></div>
                         </div>
                     </div>
                 </article>
 
-                <!-- 4. Linear Algebra -->
-                <article class="card subject-card">
+                <!-- Card 4: Linear Algebra -->
+                <article class="card subject-card" data-subject="Linear Algebra">
                     <div class="subject-banner amber">
                         <span>Applied Mathematics (Matrices)</span>
                         <span>📐</span>
@@ -133,10 +203,12 @@
                             <span class="badge badge-amber">CODE: MA201</span>
                         </div>
                         <p style="font-size: 13px; color: var(--muted);">Matrix operations, determinants, vector spaces, eigenvalues, and transformations.</p>
+                        <button type="button" class="btn btn-sm toggle-resources-btn" style="align-self: flex-start;">Hide Resources</button>
                         <div class="subject-links">
-                            <a href="#">📄 Essential Formulas & Theorems</a>
-                            <a href="#">📚 Solved Examination Problems</a>
-                            <a href="#">📝 Matrix Transformation Guide</a>
+                            <a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener noreferrer">📄 Essential Formulas & Theorems ↗</a>
+                            <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank" rel="noopener noreferrer">📚 Solved Examination Problems ↗</a>
+                            <a href="https://www.khanacademy.org/math/linear-algebra" target="_blank" rel="noopener noreferrer">📝 Matrix Transformation Guide ↗</a>
+                            <div class="user-resources" data-subject="Linear Algebra"></div>
                         </div>
                     </div>
                 </article>
@@ -176,6 +248,8 @@
 
     </div>
 
+    <!-- Resources JavaScript -->
+    <script src="js/resources.js"></script>
 </body>
 
 </html>

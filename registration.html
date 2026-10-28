@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | StudyHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- 1. Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
+                    <h2>StudyHub</h2>
+                    <small>STUDENT PORTAL</small>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="planner.html" class="nav-link">📅 Study Planner</a>
+                <a href="add-task.html" class="nav-link">➕ Add Task</a>
+                <a href="resources.html" class="nav-link">📚 Resources</a>
+                <a href="registration.html" class="nav-link active">📝 Registration</a>
+                <a href="contact.html" class="nav-link">✉️ Contact</a>
+            </nav>
+        </aside>
+
+        <!-- 2. Main Content Area -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
+                    <h1>Student Registration</h1>
+                    <p>Create your StudyHub portal account to manage coursework, notes, and tasks.</p>
+                </div>
+            </header>
+
+            <!-- Two-Column Registration Layout -->
+            <div class="grid-2">
+
+                <!-- Left Card: Registration Form -->
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div>
+                            <h2 class="card-title">Create Account</h2>
+                            <span class="card-subtitle" style="margin-bottom: 0;">Enter your college credentials</span>
+                        </div>
+                        <span class="badge badge-purple">NEW STUDENT</span>
+                    </div>
+
+                    <!-- Message Container for form feedback -->
+                    <div id="register-message" class="alert" style="display: none;"></div>
+
+                    <form id="registration-form">
+                        <div class="form-group">
+                            <label for="reg-name">Full Name *</label>
+                            <input type="text" id="reg-name" name="fullName" placeholder="e.g. Himank Jain" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-email">College Email Address *</label>
+                            <input type="email" id="reg-email" name="email" placeholder="e.g. himank@student.edu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-password">Password (Minimum 6 characters) *</label>
+                            <input type="password" id="reg-password" name="password" placeholder="••••••••" required minlength="6">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-confirm-password">Confirm Password *</label>
+                            <input type="password" id="reg-confirm-password" name="confirmPassword" placeholder="••••••••" required>
+                        </div>
+
+                        <button type="submit" id="register-btn" class="btn" style="margin-top: 10px;">Register Student</button>
+                    </form>
+                </section>
+
+                <!-- Right Card: Account Benefits -->
+                <section class="card">
+                    <h2 class="card-title">Portal Benefits</h2>
+                    <span class="card-subtitle">Why register on StudyHub</span>
+
+                    <div class="item-row">
+                        <span>📊</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Personalized Dashboard</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Track personal deadlines, completed tasks, and study hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <span>📚</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Course Materials</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Direct access to lab manuals, solved viva question banks, and notes.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <span>🔒</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>Privacy & Security</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Passwords are never stored in plain text in data.json.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <span>🎓</span>
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>College Viva Ready</strong>
+                            <p style="font-size: 13px; color: var(--muted);">Simple client-server architecture built with Node.js and vanilla JS.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Page Footer -->
+            <footer class="footer">
+                <p>© 2026 StudyHub Student Productivity Portal</p>
+                <p>Plan smarter • Study better • Achieve more</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Forms validation JavaScript -->
+    <script src="js/forms.js"></script>
+</body>
+
+</html>
