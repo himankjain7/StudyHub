@@ -1,0 +1,139 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Complete DLD Chapter 3 K-Maps",
+      "subject": "Digital Logic Design",
+      "dueDate": "2026-11-05",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Submit Web Programming Lab 2",
+      "subject": "Web Programming",
+      "dueDate": "2026-11-08",
+      "priority": "Medium",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Implement Binary Tree in C++",
+      "subject": "Data Structures",
+      "dueDate": "2026-11-10",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": 1793135585967,
+      "title": "Test Node Express Persistence",
+      "subject": "Web Engineering",
+      "dueDate": "2026-11-20",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": 1793144618395,
+      "title": "Complete Software Engineering Viva Notes",
+      "subject": "Software Engineering",
+      "dueDate": "2026-11-28",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": 1793174085406,
+      "title": "Prepare Discrete Math Viva Notes",
+      "subject": "Digital Logic Design",
+      "dueDate": "2026-11-25",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": 1793174195034,
+      "title": "Solve Binary Search Tree Lab Assignment",
+      "subject": "Data Structures",
+      "dueDate": "61120-02-20",
+      "priority": "Medium",
+      "completed": true
+    },
+    {
+      "id": 1793177174603,
+      "title": "Review Network Topologies",
+      "subject": "Computer Networks",
+      "dueDate": "2026-11-30",
+      "priority": "Medium",
+      "completed": true
+    },
+    {
+      "id": 1793177383763,
+      "title": "dfghjkl",
+      "subject": "OOP with Java",
+      "dueDate": "2026-10-30",
+      "priority": "Medium",
+      "completed": true
+    }
+  ],
+  "resources": [],
+  "users": [
+    {
+      "id": 1793135883351,
+      "fullName": "Himank jain",
+      "email": "himank@bmu.com",
+      "registeredAt": "2026-10-27T21:18:03.351Z"
+    },
+    {
+      "id": 1793136004636,
+      "fullName": "prayag",
+      "email": "prayag@bmu.com",
+      "registeredAt": "2026-10-27T21:20:04.636Z"
+    },
+    {
+      "id": 1793177174624,
+      "fullName": "Aarav Sharma",
+      "email": "aarav@bmu.com",
+      "registeredAt": "2026-10-28T08:46:14.624Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1793144290719,
+      "name": "Himank",
+      "email": "himank@test.com",
+      "subject": "Help",
+      "message": "Test message",
+      "submittedAt": "2026-10-27T23:38:10.719Z"
+    },
+    {
+      "id": 1793144618426,
+      "name": "College Student",
+      "email": "student@college.edu",
+      "subject": "Lab Notes Inquiry",
+      "message": "Could you please add more Data Structures mock questions?",
+      "submittedAt": "2026-10-27T23:43:38.426Z"
+    },
+    {
+      "id": 1793174085424,
+      "name": "Test Student",
+      "email": "student@college.edu",
+      "subject": "Question on Lab Manual",
+      "message": "Can you provide the reference manual for Experiment 4?",
+      "submittedAt": "2026-10-28T07:54:45.424Z"
+    },
+    {
+      "id": 1793174315061,
+      "name": "himank",
+      "email": "himank@bmu.com",
+      "subject": "df",
+      "message": "wer",
+      "submittedAt": "2026-10-28T07:58:35.061Z"
+    },
+    {
+      "id": 1793177174618,
+      "name": "Himank Jain",
+      "email": "himank@student.edu",
+      "subject": "Viva Question Bank",
+      "message": "Can you please upload previous year viva questions for DLD?",
+      "submittedAt": "2026-10-28T08:46:14.618Z"
+    }
+  ]
+}
