@@ -1,300 +1,212 @@
-// ==========================================================================
-// StudyHub - Task Management JavaScript (js/tasks.js)
-// Simple, beginner-friendly JavaScript for Dashboard, Planner & Add Task
-// ==========================================================================
+// StudyHub - Task Management
 
-// Global array to store tasks in memory once loaded
 let allTasks = [];
 
-// Helper function to safely read JSON from a response without throwing "<!DOCTYPE" error
-async function getResponseData(response) {
-    const contentType = response.headers.get('content-type');
-    if (contentType && contentType.includes('application/json')) {
-        try {
-            return await response.json();
-        } catch (e) {
-            return null;
-        }
-    }
-    return null;
-}
-
-// Base API URL:
-// Uses relative '/api/...' when served directly by Node/Express on port 3000.
-// Connects to 'http://localhost:3000' if opened via Live Server (port 5500, etc.)
-const API_BASE = (window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '3000'
+// API URL
+const API_BASE = window.location.port === '3000'
     ? ''
     : 'http://localhost:3000';
 
-// 1. Fetch all tasks from the backend API using async/await
+
+// 1. Fetch all tasks from the server
 async function fetchTasks() {
     try {
         const response = await fetch(API_BASE + '/api/tasks');
-        const data = await getResponseData(response);
 
         if (!response.ok) {
-            const errorMsg = (data && data.error) ? data.error : 'Server returned status ' + response.status;
-            throw new Error(errorMsg);
+            throw new Error('Failed to load tasks');
         }
 
-        allTasks = data || [];
+        allTasks = await response.json();
+
         renderTasks();
         updateTaskCounts();
+
     } catch (error) {
-        console.error('Error loading tasks:', error);
-        showErrorMessage('Unable to load tasks from server. Please make sure server.js is running on http://localhost:3000.');
+        console.error(error);
+        showErrorMessage('Unable to load tasks. Please check the server.');
     }
 }
 
-// 2. Update task counts (Total, Completed, Pending) on Dashboard
-function updateTaskCounts() {
-    const totalCountElem = document.getElementById('total-tasks-count');
-    const completedCountElem = document.getElementById('completed-tasks-count');
-    const pendingCountElem = document.getElementById('pending-tasks-count');
 
+// 2. Update task counts on Dashboard
+function updateTaskCounts() {
     const total = allTasks.length;
     const completed = allTasks.filter(task => task.completed).length;
     const pending = total - completed;
 
-    if (totalCountElem) {
-        totalCountElem.textContent = total;
-    }
-    if (completedCountElem) {
-        completedCountElem.textContent = completed;
-    }
-    if (pendingCountElem) {
-        pendingCountElem.textContent = pending;
-    }
+    const totalElement = document.getElementById('total-tasks-count');
+    const completedElement = document.getElementById('completed-tasks-count');
+    const pendingElement = document.getElementById('pending-tasks-count');
+
+    if (totalElement) totalElement.textContent = total;
+    if (completedElement) completedElement.textContent = completed;
+    if (pendingElement) pendingElement.textContent = pending;
 }
 
-// 3. Render tasks on Dashboard (latest 5) or Planner (all tasks)
+
+// 3. Display tasks on Dashboard and Planner
 function renderTasks() {
-    const recentTasksContainer = document.getElementById('recent-tasks-list');
-    const allTasksContainer = document.getElementById('tasks-list');
+    const recentList = document.getElementById('recent-tasks-list');
+    const tasksList = document.getElementById('tasks-list');
     const noTasksMessage = document.getElementById('no-tasks-message');
 
-    // --- Dashboard: Show latest 5 tasks ---
-    if (recentTasksContainer) {
-        recentTasksContainer.innerHTML = '';
+    // Dashboard: Display the latest five tasks
+    if (recentList) {
+        recentList.innerHTML = '';
 
-        if (allTasks.length === 0) {
-            const emptyDiv = document.createElement('div');
-            emptyDiv.className = 'empty-state';
-            emptyDiv.textContent = 'No tasks yet. Click "Add New Task" to schedule your study work.';
-            recentTasksContainer.appendChild(emptyDiv);
-            return;
+        const recentTasks = allTasks.slice().reverse().slice(0, 5);
+
+        if (recentTasks.length === 0) {
+            recentList.textContent = 'No tasks yet. Add your first task!';
+        } else {
+            recentTasks.forEach(task => {
+                recentList.appendChild(createTaskRow(task, false));
+            });
         }
-
-        // Show latest 5 tasks (reverse order so newest is at the top)
-        const latestTasks = allTasks.slice().reverse().slice(0, 5);
-        latestTasks.forEach(task => {
-            const item = createTaskRow(task, false);
-            recentTasksContainer.appendChild(item);
-        });
     }
 
-    // --- Planner: Show all tasks ---
-    if (allTasksContainer) {
-        allTasksContainer.innerHTML = '';
+    // Planner: Display all tasks
+    if (tasksList) {
+        tasksList.innerHTML = '';
 
         if (allTasks.length === 0) {
-            if (noTasksMessage) {
-                noTasksMessage.style.display = 'block';
-            }
-            return;
-        }
+            if (noTasksMessage) noTasksMessage.style.display = 'block';
+        } else {
+            if (noTasksMessage) noTasksMessage.style.display = 'none';
 
-        if (noTasksMessage) {
-            noTasksMessage.style.display = 'none';
+            allTasks.slice().reverse().forEach(task => {
+                tasksList.appendChild(createTaskRow(task, true));
+            });
         }
-
-        const sortedTasks = allTasks.slice().reverse();
-        sortedTasks.forEach(task => {
-            const item = createTaskRow(task, true);
-            allTasksContainer.appendChild(item);
-        });
     }
 }
 
-// Helper: Create a single task row DOM element
-function createTaskRow(task, showCompleteButton) {
+
+// 4. Create a task row
+function createTaskRow(task, showButton) {
     const row = document.createElement('article');
     row.className = 'item-row';
     row.id = 'task-row-' + task.id;
 
-    // Left details container
     const details = document.createElement('div');
-    details.style.flex = '1';
 
-    // Title line with subject badge
-    const titleLine = document.createElement('div');
-    titleLine.style.display = 'flex';
-    titleLine.style.alignItems = 'center';
-    titleLine.style.gap = '8px';
-    titleLine.style.flexWrap = 'wrap';
+    const title = document.createElement('strong');
+    title.textContent = task.title;
 
-    const titleStrong = document.createElement('strong');
-    titleStrong.textContent = task.title;
     if (task.completed) {
-        titleStrong.className = 'task-title-done';
+        title.className = 'task-title-done';
     }
-    titleLine.appendChild(titleStrong);
 
-    if (task.subject) {
-        const subjectBadge = document.createElement('span');
-        subjectBadge.className = 'badge badge-purple';
-        subjectBadge.textContent = task.subject;
-        titleLine.appendChild(subjectBadge);
-    }
-    details.appendChild(titleLine);
+    details.appendChild(title);
 
-    // Meta details (Due Date & Priority)
-    const meta = document.createElement('p');
-    meta.style.fontSize = '13px';
-    meta.style.color = 'var(--muted)';
-    meta.style.marginTop = '4px';
+    const subject = document.createElement('span');
+    subject.className = 'badge badge-purple';
+    subject.textContent = ' ' + (task.subject || 'General');
+    details.appendChild(subject);
 
-    const formattedDate = task.dueDate ? task.dueDate : 'No due date';
-    meta.textContent = 'Due: ' + formattedDate + ' • Priority: ';
+    const info = document.createElement('p');
+    info.textContent = 'Due: ' + (task.dueDate || 'No due date')
+        + ' | Priority: ' + (task.priority || 'Medium');
+    details.appendChild(info);
 
-    const priorityBadge = document.createElement('span');
-    const prio = (task.priority || 'Medium').toLowerCase();
-    if (prio === 'high') {
-        priorityBadge.className = 'badge badge-red';
-    } else if (prio === 'low') {
-        priorityBadge.className = 'badge badge-green';
-    } else {
-        priorityBadge.className = 'badge badge-amber';
-    }
-    priorityBadge.textContent = task.priority || 'Medium';
-    meta.appendChild(priorityBadge);
-
-    details.appendChild(meta);
     row.appendChild(details);
 
-    // Right actions container (Status badge and Complete button)
-    const actions = document.createElement('div');
-    actions.style.display = 'flex';
-    actions.style.alignItems = 'center';
-    actions.style.gap = '10px';
+    const status = document.createElement('span');
+    status.className = task.completed
+        ? 'badge badge-green'
+        : 'badge badge-amber';
+    status.textContent = task.completed ? 'COMPLETED' : 'PENDING';
 
-    const statusBadge = document.createElement('span');
-    if (task.completed) {
-        statusBadge.className = 'badge badge-green';
-        statusBadge.textContent = 'COMPLETED';
-    } else {
-        statusBadge.className = 'badge badge-amber';
-        statusBadge.textContent = 'PENDING';
-    }
-    actions.appendChild(statusBadge);
+    row.appendChild(status);
 
-    // If on planner page and task is pending, allow marking complete
-    if (showCompleteButton && !task.completed) {
-        const completeBtn = document.createElement('button');
-        completeBtn.className = 'btn btn-sm btn-success';
-        completeBtn.textContent = '✓ Complete';
-        completeBtn.title = 'Mark task as completed';
-        completeBtn.addEventListener('click', () => {
-            markTaskComplete(task.id, completeBtn);
+    // Show Complete button only for pending tasks on Planner
+    if (showButton && !task.completed) {
+        const button = document.createElement('button');
+        button.className = 'btn btn-sm btn-success';
+        button.textContent = 'Complete';
+
+        button.addEventListener('click', function () {
+            markTaskComplete(task.id, button);
         });
-        actions.appendChild(completeBtn);
+
+        row.appendChild(button);
     }
 
-    row.appendChild(actions);
     return row;
 }
 
-// 4. Mark a task as completed via PATCH /api/tasks/:id using async/await
-async function markTaskComplete(taskId, buttonElement) {
-    if (buttonElement) {
-        buttonElement.disabled = true;
-        buttonElement.textContent = 'Updating...';
-    }
+
+// 5. Mark a task as completed
+async function markTaskComplete(taskId, button) {
+    button.disabled = true;
+    button.textContent = 'Updating...';
 
     try {
-        const response = await fetch(API_BASE + '/api/tasks/' + taskId, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ completed: true })
-        });
-
-        const data = await getResponseData(response);
+        const response = await fetch(
+            API_BASE + '/api/tasks/' + taskId,
+            {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ completed: true })
+            }
+        );
 
         if (!response.ok) {
-            const errorMsg = (data && data.error) ? data.error : 'Failed to update task';
-            throw new Error(errorMsg);
+            throw new Error('Failed to update task');
         }
 
-        // Refresh task list from server
         await fetchTasks();
+
     } catch (error) {
-        console.error('Error marking task as complete:', error);
-        alert('Could not update task. Please check that server.js is running.');
-        if (buttonElement) {
-            buttonElement.disabled = false;
-            buttonElement.textContent = '✓ Complete';
-        }
+        alert('Unable to update task. Please check the server.');
+        button.disabled = false;
+        button.textContent = 'Complete';
     }
 }
 
-// 5. Initialize the Add Task Form
+
+// 6. Handle the Add Task form
 function initAddTaskForm() {
-    const taskForm = document.getElementById('add-task-form');
-    if (!taskForm) return;
+    const form = document.getElementById('add-task-form');
+
+    if (!form) return;
 
     const titleInput = document.getElementById('task-title');
     const subjectInput = document.getElementById('task-subject');
-    const dueDateInput = document.getElementById('task-due-date');
-    const prioritySelect = document.getElementById('task-priority');
-    const submitBtn = document.getElementById('task-submit-btn');
-    const messageContainer = document.getElementById('form-message');
+    const dateInput = document.getElementById('task-due-date');
+    const priorityInput = document.getElementById('task-priority');
+    const submitButton = document.getElementById('task-submit-btn');
+    const message = document.getElementById('form-message');
 
-    // Prevent selecting a past due date
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    const todayString = `${year}-${month}-${day}`;
-    if (dueDateInput) {
-        dueDateInput.setAttribute('min', todayString);
+    // Prevent selecting a past date
+    const today = new Date().toISOString().split('T')[0];
+
+    if (dateInput) {
+        dateInput.min = today;
     }
 
-    taskForm.addEventListener('submit', async function(event) {
+    form.addEventListener('submit', async function (event) {
         event.preventDefault();
-
-        // Clear existing messages
-        if (messageContainer) {
-            messageContainer.style.display = 'none';
-            messageContainer.className = 'alert';
-            messageContainer.textContent = '';
-        }
 
         const title = titleInput.value.trim();
         const subject = subjectInput.value.trim();
-        const dueDate = dueDateInput.value;
-        const priority = prioritySelect.value;
+        const dueDate = dateInput.value;
+        const priority = priorityInput.value;
 
-        // Validation 1: All fields required
         if (!title || !subject || !dueDate || !priority) {
-            displayFormMessage('All fields are required. Please fill in every field.', 'error');
+            displayMessage('Please fill in all fields.', 'error');
             return;
         }
 
-        // Validation 2: Past due date check
-        if (dueDate < todayString) {
-            displayFormMessage('Due date cannot be in the past. Please select today or a future date.', 'error');
+        if (dueDate < today) {
+            displayMessage('Due date cannot be in the past.', 'error');
             return;
         }
 
-        // Prevent duplicate clicks while submitting
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Saving Task...';
-        }
-
-        const payload = {
+        const task = {
             title: title,
             subject: subject,
             dueDate: dueDate,
@@ -303,70 +215,66 @@ function initAddTaskForm() {
         };
 
         try {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Saving...';
+
             const response = await fetch(API_BASE + '/api/tasks', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(task)
             });
 
-            const data = await getResponseData(response);
-
             if (!response.ok) {
-                const errorMsg = (data && data.error) ? data.error : 'Server returned status ' + response.status;
-                throw new Error(errorMsg);
+                throw new Error('Failed to add task');
             }
 
-            displayFormMessage('Task added successfully! Redirecting to Study Planner...', 'success');
-            taskForm.reset();
+            displayMessage('Task added successfully!', 'success');
+            form.reset();
 
-            if (dueDateInput) {
-                dueDateInput.setAttribute('min', todayString);
-            }
-
-            setTimeout(() => {
+            setTimeout(function () {
                 window.location.href = 'planner.html';
-            }, 1200);
+            }, 1000);
 
         } catch (error) {
-            console.error('Error adding task:', error);
-            let displayMsg = error.message;
-            if (displayMsg.includes('Failed to fetch') || displayMsg.includes('NetworkError') || displayMsg.includes('Unexpected token')) {
-                displayMsg = 'Cannot connect to server. Please make sure server.js is running on http://localhost:3000';
-            }
-            displayFormMessage(displayMsg, 'error');
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Add Task';
-            }
+            displayMessage('Unable to add task. Please check the server.', 'error');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Add Task';
         }
     });
 
-    function displayFormMessage(text, type) {
-        if (!messageContainer) return;
-        messageContainer.style.display = 'block';
-        messageContainer.className = type === 'success' ? 'alert alert-success' : 'alert alert-error';
-        messageContainer.textContent = text;
+    // Display success or error message
+    function displayMessage(text, type) {
+        if (!message) return;
+
+        message.style.display = 'block';
+        message.className = type === 'success'
+            ? 'alert alert-success'
+            : 'alert alert-error';
+        message.textContent = text;
     }
 }
 
-// 6. Helper to show error message on planner if fetch fails
-function showErrorMessage(msg) {
+
+// 7. Display an error message
+function showErrorMessage(text) {
     const errorBox = document.getElementById('task-error-message');
+
     if (errorBox) {
         errorBox.style.display = 'block';
-        errorBox.textContent = msg;
+        errorBox.textContent = text;
     }
 }
 
-// 7. Page Load Initialization
-document.addEventListener('DOMContentLoaded', () => {
-    const recentTasksContainer = document.getElementById('recent-tasks-list');
-    const allTasksContainer = document.getElementById('tasks-list');
-    const totalCountElem = document.getElementById('total-tasks-count');
 
-    if (recentTasksContainer || allTasksContainer || totalCountElem) {
+// 8. Run code when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    if (
+        document.getElementById('recent-tasks-list') ||
+        document.getElementById('tasks-list') ||
+        document.getElementById('total-tasks-count')
+    ) {
         fetchTasks();
     }
 
