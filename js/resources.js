@@ -44,11 +44,16 @@ async function fetchResources() {
         renderResources();
     } catch (error) {
         console.error('Error loading resources:', error);
+        // Display friendly error message in resource containers if server is unreachable
+        const containers = document.querySelectorAll('.user-resources');
+        containers.forEach(container => {
+            container.innerHTML = '<p style="font-size: 13px; color: var(--muted); padding: 8px 0; margin: 0;">Unable to load resources. Please check that the server is running.</p>';
+        });
     }
 }
 
 // --------------------------------------------------------------------------
-// 2. Render user-added resources into each subject card
+// 2. Render resources into each subject card
 // --------------------------------------------------------------------------
 function renderResources() {
     const containers = document.querySelectorAll('.user-resources');
@@ -60,10 +65,22 @@ function renderResources() {
         // Filter resources belonging to this specific subject
         const subjectResources = allResources.filter(r => r.subject === subject);
 
-        subjectResources.forEach(res => {
-            const item = createResourceElement(res);
-            container.appendChild(item);
-        });
+        // Display empty state message if no resources exist for this subject
+        if (subjectResources.length === 0) {
+            const emptyMsg = document.createElement('p');
+            emptyMsg.className = 'empty-resources-message';
+            emptyMsg.style.fontSize = '13px';
+            emptyMsg.style.color = 'var(--muted)';
+            emptyMsg.style.padding = '8px 0';
+            emptyMsg.style.margin = '0';
+            emptyMsg.textContent = 'No resources added yet.';
+            container.appendChild(emptyMsg);
+        } else {
+            subjectResources.forEach(res => {
+                const item = createResourceElement(res);
+                container.appendChild(item);
+            });
+        }
     });
 }
 

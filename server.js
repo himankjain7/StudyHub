@@ -3,12 +3,19 @@
 // Beginner-friendly server for college evaluation (easy to explain in viva)
 // ==========================================================================
 
+require('dotenv').config();
+
 const express = require('express');
+const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
+const Task = require('./models/Task');
+
+// Enable virtual 'id' in JSON responses for frontend compatibility
+Task.schema.set('toJSON', { virtuals: true });
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'data.json');
 
 // Middleware 1: Enable CORS for local testing across ports
@@ -56,72 +63,97 @@ function writeData(data) {
 }
 
 // --------------------------------------------------------------------------
-// 1. Task API Routes
+// 1. Task API Routes (MongoDB CRUD)
 // --------------------------------------------------------------------------
 
-// GET /api/tasks - Retrieve all tasks
-app.get('/api/tasks', (req, res) => {
-    const data = readData();
-    res.json(data.tasks || []);
+// GET /api/tasks - Fetch all tasks from MongoDB
+app.get('/api/tasks', async (req, res) => {
+    try {
+        const tasks = await Task.find();
+        res.json(tasks);
+    } catch (error) {
+        console.error('Error fetching tasks:', error);
+        res.status(500).json({ error: 'Failed to fetch tasks from database' });
+    }
 });
 
-// POST /api/tasks - Create and save a new task
-app.post('/api/tasks', (req, res) => {
-    const { title, subject, dueDate, priority } = req.body;
+// POST /api/tasks - Validate and save a new task in MongoDB
+app.post('/api/tasks', async (req, res) => {
+    try {
+        const { title, subject, dueDate, priority } = req.body;
 
-    // Validate required fields
-    if (!title || !subject || !dueDate || !priority) {
-        return res.status(400).json({ error: 'All fields (title, subject, dueDate, priority) are required.' });
-    }
+        // Validate required fields
+        if (!title || !subject || !dueDate || !priority) {
+            return res.status(400).json({ error: 'All fields (title, subject, dueDate, priority) are required.' });
+        }
 
-    const data = readData();
-    if (!data.tasks) {
-        data.tasks = [];
-    }
+        const newTask = new Task({
+            title: title.trim(),
+            subject: subject.trim(),
+            dueDate: dueDate,
+            priority: priority,
+            completed: false
+        });
 
-    const newTask = {
-        id: Date.now(),
-        title: title.trim(),
-        subject: subject.trim(),
-        dueDate: dueDate,
-        priority: priority,
-        completed: false
-    };
-
-    data.tasks.push(newTask);
-
-    if (writeData(data)) {
+        await newTask.save();
         res.status(201).json(newTask);
-    } else {
-        res.status(500).json({ error: 'Failed to save task to data.json' });
+    } catch (error) {
+        console.error('Error saving task:', error);
+        res.status(500).json({ error: 'Failed to save task to database' });
     }
 });
 
-// PATCH /api/tasks/:id - Mark task as completed
-app.patch('/api/tasks/:id', (req, res) => {
-    const taskId = req.params.id;
-    const data = readData();
+// PATCH /api/tasks/:id - Update the completed field of a task
+app.patch('/api/tasks/:id', async (req, res) => {
+    try {
+        const taskId = req.params.id;
 
-    if (!data.tasks) {
-        return res.status(404).json({ error: 'No tasks found.' });
+        // Validate MongoDB ObjectId format
+        if (!mongoose.Types.ObjectId.isValid(taskId)) {
+            return res.status(404).json({ error: 'Task not found' });
+        }
+
+        const completedStatus = (req.body && req.body.completed !== undefined)
+            ? Boolean(req.body.completed)
+            : true;
+
+        const updatedTask = await Task.findByIdAndUpdate(
+            taskId,
+            { completed: completedStatus },
+            { new: true }
+        );
+
+        if (!updatedTask) {
+            return res.status(404).json({ error: 'Task not found' });
+        }
+
+        res.json(updatedTask);
+    } catch (error) {
+        console.error('Error updating task:', error);
+        res.status(500).json({ error: 'Failed to update task in database' });
     }
+});
 
-    const task = data.tasks.find(t => String(t.id) === String(taskId));
+// DELETE /api/tasks/:id - Delete a task from MongoDB
+app.delete('/api/tasks/:id', async (req, res) => {
+    try {
+        const taskId = req.params.id;
 
-    if (!task) {
-        return res.status(404).json({ error: 'Task not found.' });
-    }
+        // Validate MongoDB ObjectId format
+        if (!mongoose.Types.ObjectId.isValid(taskId)) {
+            return res.status(404).json({ error: 'Task not found' });
+        }
 
-    if (req.body && req.body.completed !== undefined) {
-        task.completed = Boolean(req.body.completed);
-    } else {
-        task.completed = true;
-    }
+        const deletedTask = await Task.findByIdAndDelete(taskId);
 
-    if (writeData(data)) {
-        res.json(task);
-    } else {
-        res.status(500).json({ error: 'Failed to update task in data.json' });
+        if (!deletedTask) {
+            return res.status(404).json({ error: 'Task not found' });
+        }
+
+        res.json({ message: 'Task deleted successfully', id: taskId });
+    } catch (error) {
+        console.error('Error deleting task:', error);
+        res.status(500).json({ error: 'Failed to delete task from database' });
     }
 });
 
@@ -276,7 +308,14 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: err.message || 'Internal server error' });
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`StudyHub server running on http://localhost:${PORT}`);
-});
+// Connect to MongoDB Atlas and start the Express server
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log('MongoDB connected successfully!');
+        app.listen(PORT, () => {
+            console.log(`StudyHub server running on http://localhost:${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Failed to connect to MongoDB:', err.message);
+    });
